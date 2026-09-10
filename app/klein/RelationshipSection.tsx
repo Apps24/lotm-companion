@@ -4,10 +4,12 @@ import antagonistRelationships from '@/data/characters/klein-antagonists.json';
 import antagonistEvents from '@/data/characters/klein-antagonist-events.json';
 import cosmicAntagonists from '@/data/characters/klein-cosmic-antagonists.json';
 import cosmicAntagonistEvents from '@/data/characters/klein-cosmic-antagonist-events.json';
+import type { KleinRelationship, RelationshipEvent } from '@/lib/types/knowledge-graph';
+
+const allRelationships = [...relationships, ...antagonistRelationships, ...cosmicAntagonists] as KleinRelationship[];
+const allEvents = [...relationshipEvents, ...antagonistEvents, ...cosmicAntagonistEvents] as RelationshipEvent[];
 
 export default function RelationshipSection({ spoilerChapter }: { spoilerChapter: number }) {
-  const allRelationships = [...relationships, ...antagonistRelationships, ...cosmicAntagonists];
-  const allEvents = [...relationshipEvents, ...antagonistEvents, ...cosmicAntagonistEvents];
   const visibleRelationships = allRelationships.filter((relation) => relation.chapterStart <= spoilerChapter);
   const sortedEvents = [...allEvents]
     .filter((event) => event.chapter <= spoilerChapter)
@@ -60,7 +62,6 @@ export default function RelationshipSection({ spoilerChapter }: { spoilerChapter
           {sortedEvents.map((event) => {
             const relation = allRelationships.find((item) => item.id === event.relationId);
             const isIdentityLink = event.kind === 'same-person-link';
-
             return (
               <div className="chapterMilestone" key={`${event.relationId}-${event.chapter}-${event.kind}`}>
                 <div className="chapterMilestoneMeta">
