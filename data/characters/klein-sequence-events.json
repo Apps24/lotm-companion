@@ -1,0 +1,45 @@
+[
+  {"sequence":9,"chapter":31,"title":"Potion","kind":"promotion","summary":"Klein drinks the Seer potion and formally begins the Seer pathway.","sourceStatus":"epub-anchored"},
+  {"sequence":9,"chapter":132,"title":"Meeting the Monster Again","kind":"digestion","summary":"Klein explicitly recognizes that the Seer potion has been fully digested.","sourceStatus":"epub-anchored"},
+  {"sequence":9,"chapter":148,"title":"Messenger","kind":"acting","summary":"Daly explicitly validates Klein's use of the acting method and his self-developed Seer principles.","sourceStatus":"epub-anchored"},
+
+  {"sequence":8,"chapter":168,"title":"Clown Potion","kind":"promotion","summary":"Klein drinks the Clown potion and advances to Sequence 8.","sourceStatus":"epub-anchored"},
+  {"sequence":8,"chapter":169,"title":"New Abilities","kind":"ability","summary":"He tests the Clown's major physical changes: balance, coordination, agility, speed and predictive combat intuition.","sourceStatus":"epub-anchored"},
+  {"sequence":8,"chapter":287,"title":"Lanevus confrontation","kind":"digestion","summary":"After killing Lanevus, the emotional contradiction behind the smiling clown becomes the point where the Clown potion finishes digesting.","sourceStatus":"epub-anchored"},
+
+  {"sequence":7,"chapter":296,"title":"Magician","kind":"promotion","summary":"Klein advances to Sequence 7 Magician and begins testing the new spell-like toolkit.","sourceStatus":"epub-anchored"},
+  {"sequence":7,"chapter":381,"title":"Conjectures","kind":"acting","summary":"He consolidates the five Magician principles, including preparation, challenging the impossible, proactive performance, audience feedback and attention control.","sourceStatus":"epub-anchored"},
+  {"sequence":7,"chapter":428,"title":"The Scapegoat","kind":"digestion","summary":"The Magician potion reaches complete digestion by the end of this chapter's sequence of events.","sourceStatus":"epub-anchored"},
+
+  {"sequence":6,"chapter":451,"title":"Faceless","kind":"promotion","summary":"Klein advances to Faceless, gaining the ability to reconstruct appearance and support much deeper identity work.","sourceStatus":"epub-anchored"},
+  {"sequence":6,"chapter":532,"title":"Lord Caucasian","kind":"acting","summary":"Acting as Wendt helps Klein sharpen the Faceless principle that disguise requires genuine feedback without losing the core self.","sourceStatus":"epub-anchored"},
+  {"sequence":6,"chapter":660,"title":"Final Faceless digestion","kind":"digestion","summary":"While operating as Gehrman Sparrow on the sea, Klein explicitly feels the Faceless potion complete its digestion.","sourceStatus":"epub-anchored"},
+
+  {"sequence":5,"chapter":664,"title":"Every Second Counts","kind":"promotion","summary":"Klein completes the mermaid-song ritual and advances to Marionettist.","sourceStatus":"epub-anchored"},
+  {"sequence":5,"chapter":665,"title":"Spirit Body Threads","kind":"ability","summary":"He begins directly applying Spirit Body Thread control, the foundation of creating and commanding marionettes.","sourceStatus":"epub-anchored"},
+  {"sequence":5,"chapter":828,"title":"Movement of the Night","kind":"acting","summary":"Klein explicitly confirms the Marionettist principle of remaining behind the scenes and letting marionettes act in his place.","sourceStatus":"epub-anchored"},
+  {"sequence":5,"chapter":833,"title":"Things to Take Note Of","kind":"acting","summary":"The foggy-town events reinforce the principle that each marionette should possess a distinct identity and believable setting.","sourceStatus":"epub-anchored"},
+  {"sequence":5,"chapter":945,"title":"Ince Zangwill climax","kind":"digestion","summary":"Klein's orchestrated grand performance surrounding Ince Zangwill completes enough Marionettist digestion for immediate advancement.","sourceStatus":"epub-anchored"},
+
+  {"sequence":4,"chapter":946,"title":"A Bestowment Or A Curse","kind":"promotion","summary":"Klein consumes the Bizarro Sorcerer potion after completing the demigod-level performance ritual and becomes a demigod.","sourceStatus":"epub-anchored"},
+  {"sequence":4,"chapter":1031,"title":"Possibility","kind":"acting","summary":"He deliberately incorporates bizarre and eerie behavior into his methods to satisfy the potion's acting requirements while avoiding harm to innocents.","sourceStatus":"epub-anchored"},
+  {"sequence":4,"chapter":1090,"title":"Haunted Tales","kind":"acting","summary":"Klein creates frightening urban legends while healing bombing victims, using public feedback to accelerate Bizarro Sorcerer digestion.","sourceStatus":"epub-anchored"},
+  {"sequence":4,"chapter":1110,"title":"Spirit Channeling","kind":"acting","summary":"His deliberate Amon impersonation before the Red Angel evil spirit becomes an extreme example of Bizarro Sorcerer acting through shock and fear.","sourceStatus":"epub-anchored"},
+
+  {"sequence":3,"chapter":1137,"title":"Amidst History","kind":"promotion","summary":"Klein uses his unique separation from the present era to satisfy the Scholar of Yore ritual and advances to Sequence 3.","sourceStatus":"epub-anchored"},
+  {"sequence":3,"chapter":1138,"title":"Scholar of Yore","kind":"ability","summary":"He begins exploring the Historical Void and the pathway's ability to borrow and summon from the past.","sourceStatus":"epub-anchored"},
+  {"sequence":3,"chapter":1167,"title":"When the Stars Are Right","kind":"digestion","summary":"The Chernobyl revelation confirms the world's true ancient history and causes the Scholar of Yore potion to finish digesting.","sourceStatus":"epub-anchored"},
+
+  {"sequence":2,"chapter":1268,"title":"Miracle Invoker","kind":"promotion","summary":"Klein returns a lost piece of history to the present and advances to Sequence 2 Miracle Invoker.","sourceStatus":"epub-anchored"},
+  {"sequence":2,"chapter":1269,"title":"The Power of Wishes","kind":"ability","summary":"He discovers the operating rule of Wishes: larger miracles depend on accumulating fulfilled wishes step by step.","sourceStatus":"epub-anchored"},
+  {"sequence":2,"chapter":1316,"title":"An Unknown City","kind":"acting","summary":"Klein states that he has concluded the Miracle Invoker acting principles while continuing the wandering-magician approach.","sourceStatus":"epub-anchored"},
+  {"sequence":2,"chapter":1351,"title":"Seizing The Opportunity","kind":"digestion","summary":"Immediately before advancing to Sequence 1, Klein grants accumulated wishes and finishes the last portion of Miracle Invoker digestion.","sourceStatus":"epub-anchored"},
+
+  {"sequence":1,"chapter":1352,"title":"Attendant of Mysteries","kind":"promotion","summary":"Klein completes the marionette-town ritual and advances to Sequence 1, with his body and Worms of Spirit temporarily dissolving into the spirit world.","sourceStatus":"epub-anchored"},
+  {"sequence":1,"chapter":1356,"title":"Urgency","kind":"ability","summary":"He identifies the three most important new powers: Regenerate, Reassembly/Tampering (which he prefers to call Grafting), and Realm of Mysteries.","sourceStatus":"epub-anchored"},
+  {"sequence":1,"chapter":1356,"title":"Urgency","kind":"apotheosis-prep","summary":"Klein determines how to reach a fully digested Attendant state and begins solving the Fool ritual problem of fooling time, history or fate.","sourceStatus":"epub-anchored"},
+
+  {"sequence":0,"chapter":843,"title":"Magical Mushroom","kind":"revelation","summary":"Klein confirms from the Fool Card that Sequence 0 of the pathway is The Fool.","sourceStatus":"epub-anchored"},
+  {"sequence":0,"chapter":1356,"title":"Urgency","kind":"ritual-planning","summary":"He actively analyzes how the apotheosis ritual could fool history, time or fate and explores using Sefirah Castle to make the deception real.","sourceStatus":"epub-anchored"},
+  {"sequence":0,"chapter":1380,"title":"A Miracle","kind":"promotion","summary":"Klein attempts and completes the contested apotheosis process that makes him Sequence 0 The Fool.","sourceStatus":"epub-anchored"}
+]
