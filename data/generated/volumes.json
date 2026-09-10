@@ -1,0 +1,74 @@
+[
+  {
+    "number": 1,
+    "name": "Clown",
+    "navOrder": 3,
+    "sourceDocument": "EPUB/text/ch004.xhtml",
+    "chapterStart": 1,
+    "chapterEnd": 213,
+    "chapterCount": 213
+  },
+  {
+    "number": 2,
+    "name": "Faceless",
+    "navOrder": 222,
+    "sourceDocument": "EPUB/text/ch220.xhtml",
+    "chapterStart": 214,
+    "chapterEnd": 482,
+    "chapterCount": 269
+  },
+  {
+    "number": 3,
+    "name": "Traveler",
+    "navOrder": 497,
+    "sourceDocument": "EPUB/text/ch492.xhtml",
+    "chapterStart": 483,
+    "chapterEnd": 732,
+    "chapterCount": 250
+  },
+  {
+    "number": 4,
+    "name": "Undying",
+    "navOrder": 753,
+    "sourceDocument": "EPUB/text/ch745.xhtml",
+    "chapterStart": 733,
+    "chapterEnd": 946,
+    "chapterCount": 214
+  },
+  {
+    "number": 5,
+    "name": "Red Priest",
+    "navOrder": 973,
+    "sourceDocument": "EPUB/text/ch962.xhtml",
+    "chapterStart": 947,
+    "chapterEnd": 1150,
+    "chapterCount": 204
+  },
+  {
+    "number": 6,
+    "name": "Lightseeker",
+    "navOrder": 1183,
+    "sourceDocument": "EPUB/text/ch1170.xhtml",
+    "chapterStart": 1151,
+    "chapterEnd": 1266,
+    "chapterCount": 116
+  },
+  {
+    "number": 7,
+    "name": "The Hanged Man",
+    "navOrder": 1305,
+    "sourceDocument": "EPUB/text/ch1289.xhtml",
+    "chapterStart": 1267,
+    "chapterEnd": 1353,
+    "chapterCount": 87
+  },
+  {
+    "number": 8,
+    "name": "Fool",
+    "navOrder": 1398,
+    "sourceDocument": "EPUB/text/ch1379.xhtml",
+    "chapterStart": 1354,
+    "chapterEnd": 1430,
+    "chapterCount": 77
+  }
+]
