@@ -1,0 +1,91 @@
+[
+  {
+    "id":"nighthawks",
+    "name":"Nighthawks / Blackthorn Security Company",
+    "relationship":"member-family-and-foundational-training",
+    "ranges":[
+      {"chapterStart":19,"chapterEnd":213,"role":"Klein joins the Tingen Nighthawks, trains as a Beyonder, forms his foundational team relationships, and remains defined by the Blackthorn tragedy after his resurrection."}
+    ],
+    "spoilerChapter":19,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":19,"chapterTitle":"Sealed Artifact","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"tarot-club",
+    "name":"Tarot Club",
+    "relationship":"founder-host-and-hidden-core",
+    "ranges":[
+      {"chapterStart":6,"chapterEnd":1390,"role":"Klein creates and hosts the gray-fog gathering as The Fool, operates The World as his proxy, grows the club into a high-level network, and leaves commissions before his slumber."}
+    ],
+    "spoilerChapter":6,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":7,"chapterTitle":"The Gathering","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"church-evernight",
+    "name":"Church of the Evernight Goddess",
+    "relationship":"former-member-then-covert-high-level-ally",
+    "ranges":[
+      {"chapterStart":19,"chapterEnd":213,"role":"Klein serves through the Nighthawks under the Church of Evernight."},
+      {"chapterStart":945,"chapterEnd":1394,"role":"The Evernight side repeatedly becomes a crucial covert ally in Klein's high-sequence survival, advancement and resistance against the Celestial Worthy."}
+    ],
+    "spoilerChapter":19,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":945,"chapterTitle":"Curtain Call","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"sea-god-church",
+    "name":"Sea God believers / Church of the Sea God",
+    "relationship":"inherited-faith-and-anchor-community",
+    "ranges":[
+      {"chapterStart":549,"chapterEnd":1394,"role":"After Kalvetua's death Klein inherits the prayer network through the Sea God Scepter; the Rorsted believers later become one of his important anchor communities."}
+    ],
+    "spoilerChapter":549,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":549,"chapterTitle":"High Elf","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"aurora-order",
+    "name":"Aurora Order / True Creator faction",
+    "relationship":"recurring-divine-antagonist-network",
+    "ranges":[
+      {"chapterStart":186,"chapterEnd":1346,"role":"Klein encounters True Creator corruption, Lanevus and the Tingen descent plot, Mr. A and later high-level True Creator-linked actors; the relationship ultimately connects to the ancient sun god/Sasrir revelation."}
+    ],
+    "spoilerChapter":186,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":186,"chapterTitle":"The Handsome Captain","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"rose-school-of-thought",
+    "name":"Rose School of Thought",
+    "relationship":"enemy-network-and-reinette-conflict",
+    "ranges":[
+      {"chapterStart":347,"chapterEnd":1366,"role":"Klein's cooperation with Sharron and Maric places him against Rose School pursuers; the conflict later escalates through Suah, the Chained God faction and Reinette Tinekerr."}
+    ],
+    "spoilerChapter":347,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":347,"chapterTitle":"Zombie and Werewolf","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"secret-order",
+    "name":"Secret Order",
+    "relationship":"seer-pathway-rival-network",
+    "ranges":[
+      {"chapterStart":251,"chapterEnd":1362,"role":"Rosago's information supplies key Seer-pathway formulas, while Zaratul later becomes Klein's principal same-pathway rival for advancement and Sefirah Castle."}
+    ],
+    "spoilerChapter":251,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":251,"chapterTitle":"The Secret Order","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"twilight-hermit-order",
+    "name":"Twilight Hermit Order / Adam",
+    "relationship":"hidden-director-and-ambiguous-antagonist",
+    "ranges":[
+      {"chapterStart":945,"chapterEnd":1347,"role":"Adam enters Klein's progression directly at Ince's end, later reveals hidden arrangements around Utopia, Amon and the Great Old One succession struggle."}
+    ],
+    "spoilerChapter":945,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":945,"chapterTitle":"Curtain Call","sourceType":"epub","verificationStatus":"epub-anchored"}
+  }
+]
