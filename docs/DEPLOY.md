@@ -1,6 +1,8 @@
 # Deployment
 
-## Cloudflare Pages (primary)
+## Cloudflare Pages
+
+Cloudflare Pages is the only deployment target for this project.
 
 Production deployments run from `.github/workflows/deploy-cloudflare-pages.yml` on every push to `main`.
 
@@ -17,6 +19,7 @@ The token must never be committed to this repository.
 
 - Pages project: `lotm-companion`
 - Production branch: `main`
+- Production URL: `https://lotm-companion.pages.dev`
 - Build command: `npm run build`
 - Static output directory: `out`
 
@@ -27,14 +30,9 @@ The token must never be committed to this repository.
 3. Install dependencies
 4. Run `next build`
 5. Verify `out/index.html`
-6. Run `wrangler pages deploy out --project-name=lotm-companion --branch=main`
+6. Ensure the `lotm-companion` Pages project exists
+7. Run `wrangler pages deploy out --project-name=lotm-companion --branch=main`
 
-### First deployment status
+### Status
 
-Phase 1 build passed successfully. The first Cloudflare deployment attempt reached Wrangler and stopped because `CLOUDFLARE_API_TOKEN` was not yet configured in GitHub Actions secrets.
-
-Once both secrets are added, rerun the **Deploy Cloudflare Pages** workflow or push to `main`.
-
-## Vercel (secondary)
-
-The repository remains compatible with Vercel. Cloudflare Pages is the primary production target for this project.
+Phase 1 production deployment completed successfully on Cloudflare Pages. Future phase merges to `main` deploy automatically.
