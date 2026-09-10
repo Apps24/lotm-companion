@@ -1,0 +1,9 @@
+[
+  {"id":"klein-dunn","source":"klein-moretti","target":"dunn-smith","types":["captain","mentor","ally"],"chapterStart":1,"chapterEnd":213,"knowledge":[{"chapterStart":1,"chapterEnd":213,"state":"knows-klein-moretti"}],"spoilerChapter":1},
+  {"id":"klein-leonard","source":"klein-moretti","target":"leonard-mitchell","types":["colleague","ally","later-tarot-member"],"chapterStart":1,"chapterEnd":null,"knowledge":[{"chapterStart":1,"chapterEnd":213,"state":"knows-klein-moretti"},{"chapterStart":214,"chapterEnd":950,"state":"investigates-survival-and-identities"},{"chapterStart":951,"chapterEnd":null,"state":"tarot-club-connection"}],"spoilerChapter":1},
+  {"id":"klein-azik","source":"klein-moretti","target":"azik-eggers","types":["mentor","protector","ally"],"chapterStart":1,"chapterEnd":null,"knowledge":[{"chapterStart":170,"chapterEnd":null,"state":"trusted-contact"}],"spoilerChapter":170},
+  {"id":"klein-sharron","source":"klein-moretti","target":"sharron","types":["ally","client-partner"],"chapterStart":214,"chapterEnd":null,"knowledge":[{"chapterStart":214,"chapterEnd":482,"state":"knows-sherlock-moriarty"}],"spoilerChapter":214},
+  {"id":"klein-danitz","source":"klein-moretti","target":"danitz","types":["captor-to-ally","friend","fool-believer"],"chapterStart":483,"chapterEnd":null,"knowledge":[{"chapterStart":483,"chapterEnd":null,"state":"knows-gehrman-sparrow"}],"spoilerChapter":483},
+  {"id":"klein-reinette","source":"klein-moretti","target":"reinette-tinekerr","types":["messenger","ally"],"chapterStart":483,"chapterEnd":null,"knowledge":[{"chapterStart":483,"chapterEnd":null,"state":"supernatural-ally"}],"spoilerChapter":483},
+  {"id":"klein-amon","source":"klein-moretti","target":"amon","types":["enemy","rival"],"chapterStart":362,"chapterEnd":null,"knowledge":[{"chapterStart":362,"chapterEnd":null,"state":"escalating-mutual-awareness"}],"spoilerChapter":362}
+]
