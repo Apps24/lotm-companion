@@ -1,0 +1,21 @@
+.spoilerControl {
+  position: relative !important;
+  top: auto !important;
+  z-index: auto !important;
+}
+
+.projectArtFigure {
+  margin: 0 0 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  background: rgba(0,0,0,.2);
+}
+
+.projectArtFigure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
