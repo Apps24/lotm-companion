@@ -1,0 +1,39 @@
+[
+  {
+    "id": "klein-true-creator",
+    "source": "klein-moretti",
+    "target": "true-creator",
+    "displayName": "True Creator / Fallen Creator",
+    "group": "antagonists",
+    "types": ["evil-god", "aurora-order-deity", "tingen-divine-source", "degeneration-authority", "ancient-sun-god-remnant"],
+    "chapterStart": 186,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 186, "chapterEnd": 208, "state": "klein-encounters-the-true-creators-image-through-hood-eugen-and-links-lanevus-and-the-aurora-order-to-the-deity"},
+      {"chapterStart": 209, "chapterEnd": 1115, "state": "the-tingen-spawn-crisis-turns-the-true-creator-into-a-recurring-divine-threat-behind-kleins-aurora-order-conflicts"},
+      {"chapterStart": 1116, "chapterEnd": 1345, "state": "klein-as-the-fool-senses-the-true-creators-gaze-on-the-city-of-silver-expedition-and-recognizes-the-risk-of-a-direct-divine-clash"},
+      {"chapterStart": 1346, "chapterEnd": null, "state": "klein-learns-the-true-creator-is-the-ancient-sun-god-evil-spirit-after-retrieving-sasrirs-personality-and-is-the-true-counterpart-adam-must-eventually-fuse-with"}
+    ],
+    "spoilerChapter": 186,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-celestial-worthy",
+    "source": "klein-moretti",
+    "target": "celestial-worthy",
+    "displayName": "Celestial Worthy of Heaven and Earth for Blessings",
+    "group": "antagonists",
+    "types": ["former-lord-of-mysteries", "former-sefirah-castle-owner", "great-old-one", "inner-awakening", "existential-rival"],
+    "chapterStart": 1215,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 1215, "chapterEnd": 1270, "state": "klein-hears-the-celestial-worthy-honorific-at-the-western-continent-barrier-and-links-it-to-sefirah-castles-former-owner"},
+      {"chapterStart": 1271, "chapterEnd": 1354, "state": "the-seven-lights-identify-celestial-worthy-as-the-former-lord-of-mysteries-and-klein-realizes-that-mental-imprint-is-already-awakening-inside-him"},
+      {"chapterStart": 1355, "chapterEnd": 1383, "state": "after-becoming-an-attendant-of-mysteries-klein-must-use-anchors-and-zaratuls-remnant-imprint-to-suppress-the-celestial-worthys-accelerating-awakening"},
+      {"chapterStart": 1384, "chapterEnd": 1386, "state": "the-celestial-worthys-awakening-becomes-a-third-force-in-kleins-final-duel-with-amon-and-klein-deliberately-deepens-it-as-a-last-resort-gambit"},
+      {"chapterStart": 1387, "chapterEnd": null, "state": "after-amons-defeat-the-celestial-worthy-rapidly-awakens-and-klein-enters-slumber-to-resist-and-fuse-with-the-former-lord-of-mysteries-instead-of-being-replaced"}
+    ],
+    "spoilerChapter": 1215,
+    "sourceStatus": "epub-anchored"
+  }
+]
