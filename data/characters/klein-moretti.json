@@ -1,0 +1,30 @@
+{
+  "id": "klein-moretti",
+  "name": "Klein Moretti",
+  "originalIdentity": "Zhou Mingrui",
+  "pathway": "Fool / Seer",
+  "spoilerChapter": 1,
+  "identities": [
+    {"id":"zhou-mingrui","name":"Zhou Mingrui","chapterStart":1,"chapterEnd":null,"kind":"original"},
+    {"id":"klein-moretti","name":"Klein Moretti","chapterStart":1,"chapterEnd":null,"kind":"core"},
+    {"id":"the-fool","name":"The Fool","chapterStart":6,"chapterEnd":null,"kind":"tarot"},
+    {"id":"the-world","name":"The World","chapterStart":263,"chapterEnd":null,"kind":"tarot"},
+    {"id":"sherlock-moriarty","name":"Sherlock Moriarty","chapterStart":214,"chapterEnd":482,"kind":"public-alias"},
+    {"id":"gehrman-sparrow","name":"Gehrman Sparrow","chapterStart":483,"chapterEnd":null,"kind":"public-alias"},
+    {"id":"dwayne-dantes","name":"Dwayne Dantès","chapterStart":733,"chapterEnd":null,"kind":"public-alias"},
+    {"id":"merlin-hermes","name":"Merlin Hermes","chapterStart":1269,"chapterEnd":null,"kind":"public-alias"}
+  ],
+  "sequenceProgression": [
+    {"sequence":9,"name":"Seer","promotionChapter":32,"digestionChapter":126,"sourceStatus":"epub-anchored"},
+    {"sequence":8,"name":"Clown","promotionChapter":168,"digestionChapter":287,"sourceStatus":"epub-anchored"},
+    {"sequence":7,"name":"Magician","promotionChapter":295,"digestionChapter":428,"sourceStatus":"epub-anchored"},
+    {"sequence":6,"name":"Faceless","promotionChapter":451,"digestionChapter":660,"sourceStatus":"epub-anchored"},
+    {"sequence":5,"name":"Marionettist","promotionChapter":664,"digestionChapter":945,"sourceStatus":"epub-anchored"},
+    {"sequence":4,"name":"Bizarro Sorcerer","promotionChapter":946,"digestionChapter":null,"sourceStatus":"epub-anchored"},
+    {"sequence":3,"name":"Scholar of Yore","promotionChapter":1137,"digestionChapter":null,"sourceStatus":"epub-anchored"},
+    {"sequence":2,"name":"Miracle Invoker","promotionChapter":1268,"digestionChapter":null,"sourceStatus":"epub-anchored"},
+    {"sequence":1,"name":"Attendant of Mysteries","promotionChapter":1352,"digestionChapter":null,"sourceStatus":"epub-anchored"},
+    {"sequence":0,"name":"The Fool","promotionChapter":1380,"digestionChapter":null,"sourceStatus":"epub-anchored"}
+  ],
+  "sourcePolicy": "Promotion anchors are tied to the supplied EPUB. Digestion anchors are retained as structured milestones and will receive per-event source locators during Phase 2 verification. Novel prose is not stored."
+}
