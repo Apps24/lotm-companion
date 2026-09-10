@@ -3,6 +3,7 @@ import "./final.css";
 import "./hotfix.css";
 import "./reader.css";
 import "./reader-companion.css";
+import "./natural-narrator.css";
 import type { Metadata } from "next";
 import SiteNav from "./components/SiteNav";
 
