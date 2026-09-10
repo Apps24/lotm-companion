@@ -4,7 +4,7 @@
     "name":"Tingen",
     "kind":"home-and-nighthawk-era",
     "ranges":[
-      {"chapterStart":1,"chapterEnd":213,"role":"Primary home, Moretti family life, Blackthorn Security Company, Nighthawk training, first four Seer-pathway stages of growth and the Tingen climax."},
+      {"chapterStart":1,"chapterEnd":213,"role":"Primary home, Moretti family life, Blackthorn Security Company, Nighthawk training, Seer and Clown growth, and the Tingen climax."},
       {"chapterStart":1366,"chapterEnd":1366,"role":"Late-story return to old places as Klein reinforces humanity and self-awareness."}
     ],
     "spoilerChapter":1,
@@ -22,7 +22,7 @@
     ],
     "spoilerChapter":214,
     "sourceStatus":"epub-anchored",
-    "sourceLocator":{"chapter":214,"chapterTitle":"A New Beginning","sourceType":"epub","verificationStatus":"epub-anchored"}
+    "sourceLocator":{"chapter":214,"chapterTitle":"Land of Hope","sourceType":"epub","verificationStatus":"epub-anchored"}
   },
   {
     "id":"sonia-sea-rorsted",
@@ -41,10 +41,10 @@
     "name":"Sefirah Castle / the world above the gray fog",
     "kind":"core-mystical-domain",
     "ranges":[
-      {"chapterStart":1,"chapterEnd":1394,"role":"Klein's persistent gray-fog domain: Tarot gatherings, divination enhancement, item storage, prayer responses, high-sequence authority and the final contest for the Lord of the Mysteries position."},
+      {"chapterStart":5,"chapterEnd":1394,"role":"Klein's persistent gray-fog domain: ritual access, Tarot gatherings, divination enhancement, item storage, prayer responses, high-sequence authority and the final contest for the Lord of the Mysteries position."},
       {"chapterStart":1127,"chapterEnd":1394,"role":"The domain is explicitly understood and named as Sefirah Castle as Klein's knowledge and control deepen."}
     ],
-    "spoilerChapter":1,
+    "spoilerChapter":5,
     "sourceStatus":"epub-anchored",
     "sourceLocator":{"chapter":1127,"chapterTitle":"Sefirah Castle","sourceType":"epub","verificationStatus":"epub-anchored"}
   },
@@ -57,14 +57,14 @@
     ],
     "spoilerChapter":1151,
     "sourceStatus":"epub-anchored",
-    "sourceLocator":{"chapter":1151,"chapterTitle":"The Fool's Gambit","sourceType":"epub","verificationStatus":"epub-anchored"}
+    "sourceLocator":{"chapter":1151,"chapterTitle":"Deceit","sourceType":"epub","verificationStatus":"epub-anchored"}
   },
   {
     "id":"utopia",
     "name":"Utopia",
     "kind":"attendant-of-mysteries-ritual-town",
     "ranges":[
-      {"chapterStart":1328,"chapterEnd":1345,"role":"Klein's marionette town and Attendant of Mysteries ritual project; later the site of Zaratul's ambush and Adam's hidden capture arrangement."}
+      {"chapterStart":1328,"chapterEnd":1345,"role":"Klein's marionette-town advancement project; later the site of Zaratul's ambush and Adam's hidden capture arrangement."}
     ],
     "spoilerChapter":1328,
     "sourceStatus":"epub-anchored",
