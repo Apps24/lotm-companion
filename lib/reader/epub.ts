@@ -191,7 +191,7 @@ export async function renderEpubChapter(book: LoadedReaderBook, chapter: ReaderC
       image.removeAttribute('src');
       return;
     }
-    const bytes = await entry.async('uint8array');
+    const bytes = await entry.async('arraybuffer');
     const url = URL.createObjectURL(new Blob([bytes], { type: mimeForPath(path) }));
     assetUrls.push(url);
     image.setAttribute('src', url);
@@ -206,7 +206,7 @@ export async function renderEpubChapter(book: LoadedReaderBook, chapter: ReaderC
     const path = resolvePath(chapter.href, rawHref);
     const entry = book.archive.file(path);
     if (!entry) return;
-    const bytes = await entry.async('uint8array');
+    const bytes = await entry.async('arraybuffer');
     const url = URL.createObjectURL(new Blob([bytes], { type: mimeForPath(path) }));
     assetUrls.push(url);
     image.setAttribute('href', url);
