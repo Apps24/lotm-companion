@@ -1,5 +1,5 @@
 import ReaderClient from './ReaderClient';
-import NaturalNarrator from './NaturalNarrator';
+import NaturalNarrator from './NaturalNarratorV2';
 
 export const metadata = {
   title: 'Personal EPUB Reader · LOTM Companion',
