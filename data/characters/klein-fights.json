@@ -1,0 +1,8 @@
+[
+  {"id":"ray-bieber-2-049","chapterStart":72,"chapterEnd":76,"name":"Blackthorn team vs Ray Bieber and 2-049","opponents":["Ray Bieber","Suited Clown","2-049"],"allies":["Dunn Smith","Leonard Mitchell","Aiur Harson","Lorotta","Borgia"],"outcome":"win","spoilerChapter":72,"sourceStatus":"web-crosschecked"},
+  {"id":"old-neil","chapterStart":164,"chapterEnd":164,"name":"Old Neil loss-of-control incident","opponents":["Old Neil"],"allies":["Dunn Smith","Royale"],"outcome":"tragic-win","spoilerChapter":164,"sourceStatus":"web-crosschecked"},
+  {"id":"madam-sharon","chapterStart":199,"chapterEnd":199,"name":"Nighthawks vs Madam Sharon","opponents":["Madam Sharon"],"allies":["Dunn Smith","Kenley"],"outcome":"win-with-casualty","spoilerChapter":199,"sourceStatus":"web-crosschecked"},
+  {"id":"megose-true-creator-spawn","chapterStart":209,"chapterEnd":213,"name":"Tingen climax: True Creator's Spawn","opponents":["True Creator's Spawn"],"allies":["Dunn Smith","Leonard Mitchell"],"outcome":"victory-and-death","spoilerChapter":209,"sourceStatus":"web-crosschecked"},
+  {"id":"sharron-maric-pursuers","chapterStart":347,"chapterEnd":350,"name":"Klein, Sharron and Maric vs pursuers","opponents":["Steve","Jason","Tyre"],"allies":["Sharron","Maric"],"outcome":"win","spoilerChapter":347,"sourceStatus":"web-crosschecked"},
+  {"id":"ince-revenge","chapterStart":943,"chapterEnd":946,"name":"Revenge against Ince Zangwill","opponents":["Ince Zangwill"],"allies":["Leonard Mitchell","Daly Simone"],"outcome":"win-major-consequence","spoilerChapter":943,"sourceStatus":"needs-detailed-epub-pass"}
+]
