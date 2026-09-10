@@ -25,6 +25,7 @@ jobs:
       - name: Verify static export
         run: |
           test -f out/index.html
+          test -f out/read/index.html
           test -f out/chapters/2/index.html
           test -f out/tarot/index.html
           test -f out/world/index.html

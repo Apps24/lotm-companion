@@ -1,0 +1,26 @@
+name: Deploy Phase 8 AI Narrator
+
+on:
+  push:
+    branches: ['phase/8-personal-epub-reader']
+    paths:
+      - 'workers/tts/**'
+      - '.github/workflows/deploy-tts-worker.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy rate-limited Workers AI narrator
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: workers/tts
+          wranglerVersion: '4.131.0'
+          command: deploy
