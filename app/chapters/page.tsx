@@ -1,25 +1,2 @@
-import Link from 'next/link';
-import volumes from '@/data/generated/volumes.json';
-
-export default function ChaptersPage() {
-  return (
-    <main>
-      <nav className="topNav"><Link href="/">← Companion home</Link></nav>
-      <section className="compactHero">
-        <p className="eyebrow">EPUB INDEX · PHASE 1</p>
-        <h1>Chapter Index</h1>
-        <p className="lead">The source EPUB contains 1,430 numbered chapter entries. The full title-level index is generated locally by the parser; this public baseline exposes the canonical volume ranges without publishing novel prose.</p>
-      </section>
-      <section className="volumeGrid chapterIndexGrid">
-        {volumes.map((volume) => (
-          <article key={volume.number}>
-            <small>VOLUME {volume.number}</small>
-            <h2>{volume.name}</h2>
-            <p>Chapters {volume.chapterStart}–{volume.chapterEnd}</p>
-            <span>{volume.chapterCount} chapter entries</span>
-          </article>
-        ))}
-      </section>
-    </main>
-  );
-}
+import ChapterIndexClient from "./ChapterIndexClient";
+export default function ChaptersPage(){return <main className="finalMain"><section className="compactHero"><p className="eyebrow">PHASE 5 · READER & SPOILERS</p><h1>Chapter Companion</h1><p className="lead">All 1,430 numbered chapters are indexed by canonical title. Open any chapter for derived companion signals, major events and previous/next navigation; source prose remains in your EPUB.</p></section><ChapterIndexClient/></main>}
