@@ -98,6 +98,88 @@
     "sourceStatus": "epub-anchored"
   },
   {
+    "id": "klein-derrick",
+    "source": "klein-moretti",
+    "target": "derrick-berg",
+    "displayName": "Derrick Berg / The Sun",
+    "group": "tarot-club",
+    "types": ["tarot-member", "city-of-silver", "trade-partner", "fool-dependent-ally"],
+    "chapterStart": 137,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 137, "chapterEnd": 137, "state": "knows-the-gray-fog-host-as-the-fool"},
+      {"chapterStart": 138, "chapterEnd": 263, "state": "serves-as-the-sun-and-knows-the-fool"},
+      {"chapterStart": 264, "chapterEnd": null, "state": "knows-the-fool-and-the-world-as-separate-personas"}
+    ],
+    "spoilerChapter": 137,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-fors",
+    "source": "klein-moretti",
+    "target": "fors-wall",
+    "displayName": "Fors Wall / The Magician",
+    "group": "tarot-club",
+    "types": ["tarot-member", "apprentice", "trade-partner", "fool-protected"],
+    "chapterStart": 297,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 297, "chapterEnd": 310, "state": "knows-the-fool-and-joins-as-the-magician"},
+      {"chapterStart": 311, "chapterEnd": null, "state": "knows-the-fool-and-the-world-as-separate-personas"}
+    ],
+    "spoilerChapter": 297,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-emlyn",
+    "source": "klein-moretti",
+    "target": "emlyn-white",
+    "displayName": "Emlyn White / The Moon",
+    "group": "real-world-tarot",
+    "types": ["real-world-acquaintance", "tarot-member", "sanguine", "trade-partner"],
+    "chapterStart": 368,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 368, "chapterEnd": 467, "state": "knows-sherlock-moriarty-and-recognizes-him-as-the-master-key-owner"},
+      {"chapterStart": 468, "chapterEnd": null, "state": "knows-sherlock-moriarty-and-separately-knows-the-fool-as-the-moon"}
+    ],
+    "spoilerChapter": 368,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-cattleya",
+    "source": "klein-moretti",
+    "target": "cattleya",
+    "displayName": "Cattleya / The Hermit",
+    "group": "tarot-sea",
+    "types": ["tarot-member", "pirate-admiral", "sea-ally", "trade-partner"],
+    "chapterStart": 564,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 564, "chapterEnd": 565, "state": "knows-the-fool-and-joins-as-the-hermit"},
+      {"chapterStart": 566, "chapterEnd": 636, "state": "knows-the-fool-and-the-world-as-separate-personas"},
+      {"chapterStart": 637, "chapterEnd": null, "state": "knows-the-world-is-gehrman-sparrow-while-the-fool-remains-separate"}
+    ],
+    "spoilerChapter": 564,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-xio",
+    "source": "klein-moretti",
+    "target": "xio-derecha",
+    "displayName": "Xio Derecha / Judgment",
+    "group": "real-world-tarot",
+    "types": ["real-world-acquaintance", "tarot-member", "mi9", "mission-ally"],
+    "chapterStart": 956,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 956, "chapterEnd": 957, "state": "knows-the-fool-and-joins-as-judgment"},
+      {"chapterStart": 958, "chapterEnd": null, "state": "knows-world-gehrman-and-dwayne-public-identity-context-without-a-fool-link"}
+    ],
+    "spoilerChapter": 956,
+    "sourceStatus": "epub-anchored"
+  },
+  {
     "id": "klein-azik",
     "source": "klein-moretti",
     "target": "azik-eggers",
