@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import identities from '@/data/characters/klein-identities.json';
+import IdentitySection from './IdentitySection';
 import milestones from '@/data/characters/klein-sequence-milestones.json';
 import sequenceEvents from '@/data/characters/klein-sequence-events.json';
 import extraSequenceEvents from '@/data/characters/klein-sequence-events-extra.json';
@@ -14,7 +14,7 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">Sequence milestones are the current priority. Each Sequence is grounded in the supplied EPUB with promotion, formula, ritual, acting, abilities, digestion, ingredient acquisition and a chapter-by-chapter evidence feed before identities and relationships receive the next deep pass.</p>
+        <p className="lead">Klein's Sequence 9 → 0 progression is source-anchored first. The active second layer now maps how Zhou Mingrui, Klein Moretti, The Fool, Sherlock Moriarty, The World, Gehrman Sparrow, Dwayne Dantès and Merlin Hermes form and overlap across the story.</p>
       </section>
 
       <section className="graphRoot">
@@ -142,28 +142,11 @@ export default function KleinPage() {
         </div>
       </section>
 
-      <section className="sectionBlock mutedSecondaryLayer">
-        <div className="sectionHeading">
-          <p className="eyebrow">2 · IDENTITIES · NEXT</p>
-          <h2>One person, multiple lives</h2>
-        </div>
-        <div className="identityGraph">
-          {identities.map((identity) => (
-            <article key={identity.id} className="identityNode">
-              <small>{identity.kind}</small>
-              <h3>{identity.name}</h3>
-              <p>{identity.role}</p>
-              <span>Active: Ch {identity.chapterStart}{identity.chapterEnd ? `–${identity.chapterEnd}` : '+'}</span>
-              {identity.sequenceAtStart !== null && <em>Starts around Sequence {identity.sequenceAtStart}</em>}
-              {'sourceNote' in identity && identity.sourceNote && <small>{identity.sourceNote}</small>}
-            </article>
-          ))}
-        </div>
-      </section>
+      <IdentitySection />
 
       <section className="sectionBlock mutedSecondaryLayer">
         <div className="sectionHeading">
-          <p className="eyebrow">3 · RELATIONSHIPS · LATER</p>
+          <p className="eyebrow">3 · RELATIONSHIPS · NEXT</p>
           <h2>Who knows which version of Klein?</h2>
         </div>
         <div className="relationshipGroups">
@@ -194,7 +177,7 @@ export default function KleinPage() {
 
       <section className="principles">
         <h2>Current Phase 2 order</h2>
-        <p><strong>First:</strong> finish and verify Klein's Sequence progression. <strong>Second:</strong> deepen identity transitions. <strong>Third:</strong> expand relationship knowledge states. Unsupported details remain visibly pending instead of being filled from memory.</p>
+        <p><strong>Completed foundation:</strong> Klein's Sequence progression. <strong>Active:</strong> identity transitions and alias purposes. <strong>Next:</strong> relationship knowledge states. Unsupported details remain visibly pending instead of being filled from memory.</p>
         <p className="privacyNote">The supplied EPUB remains the primary source. Novel prose is not committed to GitHub.</p>
       </section>
     </main>
