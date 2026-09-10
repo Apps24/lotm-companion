@@ -4,7 +4,7 @@
     "name": "Seer",
     "promotionChapter": 31,
     "promotionTitle": "Potion",
-    "digestionChapter": 126,
+    "digestionChapter": 132,
     "identityContext": ["Klein Moretti", "The Fool"],
     "formula": {
       "mainIngredients": ["50 grams Star Crystal", "10 ml Lavos Squid blood"],
@@ -20,9 +20,9 @@
       "Chooses the Seer pathway and drinks the potion.",
       "Uses the Divination Club as a practical acting environment.",
       "Gradually summarizes his own Seer principles and recognizes the acting method.",
-      "Fully digests the potion before preparing for Clown."
+      "Explicitly confirms full digestion in Chapter 132 before preparing for Clown."
     ],
-    "source": {"status":"epub-anchored","chapter":31,"note":"Potion composition, acting principles and full digestion are directly supported by the supplied EPUB."},
+    "source": {"status":"epub-anchored","chapter":31,"note":"Potion composition, acting principles and Chapter 132 full digestion are directly supported by the supplied EPUB."},
     "spoilerChapter": 31
   },
   {
@@ -162,7 +162,7 @@
     "name": "Scholar of Yore",
     "promotionChapter": 1137,
     "promotionTitle": "Amidst History",
-    "digestionChapter": 1169,
+    "digestionChapter": 1167,
     "identityContext": ["Gehrman Sparrow", "The World"],
     "formula": {
       "mainIngredients": ["A pair of eyes from a Hound of Fulgrim / Sefirah Castle Keeper", "One Demonic Wolf of Fog transformed heart"],
@@ -179,9 +179,9 @@
       "Advances on an isolated Berserk Sea island.",
       "Uses genuine ancient historical records as supplementary ingredients.",
       "Links digestion to uncovering and reconstructing hidden history.",
-      "By Chapter 1169 the potion is explicitly described as completely digested."
+      "Chapter 1167's Chernobyl revelation completes the Scholar of Yore potion digestion."
     ],
-    "source": {"status":"epub-anchored","chapter":1137,"note":"Formula, three-hundred-year ritual, Historical Void mechanics and Chapter 1169 full digestion are directly supported."},
+    "source": {"status":"epub-anchored","chapter":1137,"note":"Formula, three-hundred-year ritual, Historical Void mechanics and Chapter 1167 full digestion are directly supported."},
     "spoilerChapter": 1137
   },
   {
