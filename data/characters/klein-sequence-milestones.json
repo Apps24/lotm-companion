@@ -1,0 +1,264 @@
+[
+  {
+    "sequence": 9,
+    "name": "Seer",
+    "promotionChapter": 31,
+    "promotionTitle": "Potion",
+    "digestionChapter": 132,
+    "identityContext": ["Klein Moretti", "The Fool"],
+    "formula": {
+      "mainIngredients": ["50 grams Star Crystal", "10 ml Lavos Squid blood"],
+      "supplementaryIngredients": ["Pure water", "Night vanilla", "Gold mint leaves", "Poison hemlock juice", "Dragon blood grass"]
+    },
+    "actingPrinciples": [
+      "Act as a real fortune-teller rather than merely possessing divination powers.",
+      "Respect fate and avoid extracting excessive personal benefit from divination.",
+      "Do not treat divination as omnipotent; avoid recklessly divining matters involving high-level existences."
+    ],
+    "abilities": ["Divination", "Spirit Vision", "Enhanced mysticism intuition"],
+    "milestones": [
+      "Chooses the Seer pathway and drinks the potion.",
+      "Uses the Divination Club as a practical acting environment.",
+      "Gradually summarizes his own Seer principles and recognizes the acting method.",
+      "Explicitly confirms full digestion in Chapter 132 before preparing for Clown."
+    ],
+    "source": {"status":"epub-anchored","chapter":31,"note":"Potion composition, acting principles and Chapter 132 full digestion are directly supported by the supplied EPUB."},
+    "spoilerChapter": 31
+  },
+  {
+    "sequence": 8,
+    "name": "Clown",
+    "promotionChapter": 168,
+    "promotionTitle": "Clown Potion",
+    "digestionChapter": 287,
+    "identityContext": ["Klein Moretti", "The Fool", "Sherlock Moriarty"],
+    "formula": {
+      "mainIngredients": ["Single horn of a matured Hornacis gray mountain goat", "One complete human-faced rose"],
+      "supplementaryIngredients": ["80 ml pure water", "5 drops tornapple juice", "7 grams black-rimmed sunflower powder", "10 grams golden cloak grass powder", "3 drops poison hemlock"]
+    },
+    "actingPrinciples": [],
+    "actingEvidence": "The EPUB does not provide a clean enumerated Clown principle in the passages located so far. Klein explicitly asks how to act as a Clown, and the Lanevus scene visually ties laughter, grief, and the clown mask to complete digestion; this is kept as evidence rather than converted into a canonical rule.",
+    "abilities": ["Massively improved coordination and balance", "Enhanced agility, speed and combat learning", "Fleeting intuitive prediction of another person's next action", "Improved control of expressions and body language"],
+    "milestones": [
+      "Advances in Chapter 168 after passing the Church examination.",
+      "Tests the dramatic increase in coordination, balance and combat capability in Chapter 169.",
+      "Carries Clown-stage abilities into the end of the Tingen arc and early Backlund period.",
+      "Completes digestion during the Lanevus revenge scene in Chapter 287."
+    ],
+    "source": {"status":"epub-anchored-with-pending-acting-rule","chapter":168,"note":"Promotion, formula, abilities and Chapter 287 digestion are explicit; the consolidated acting principle remains intentionally unasserted."},
+    "spoilerChapter": 168
+  },
+  {
+    "sequence": 7,
+    "name": "Magician",
+    "promotionChapter": 296,
+    "promotionTitle": "Magician",
+    "digestionChapter": 428,
+    "identityContext": ["Sherlock Moriarty", "The Fool", "The World"],
+    "formula": {
+      "mainIngredients": ["One true root of a Mist Treant", "All spinal fluid of a Dark Patterned Black Panther"],
+      "supplementaryIngredients": ["60 ml purified water", "30 ml Mist Treant juice", "3 grams Droplet Gem powder", "4 drops Fantasy Grass essential oil"]
+    },
+    "actingPrinciples": [
+      "Never perform unprepared.",
+      "Challenge the impossible, even if the final outcome is only an illusion.",
+      "Take the initiative to perform.",
+      "Seek applause from the audience.",
+      "Control the target's attention."
+    ],
+    "abilities": ["Paper Figurine Substitute", "Flame Controlling", "Illusion Creation", "Enhanced agility and spell-like tricks"],
+    "milestones": [
+      "Finishes gathering the ingredients immediately before advancement.",
+      "Begins experimenting with performances and audience feedback to accelerate digestion.",
+      "Concludes the five principal Magician rules.",
+      "Uses the resulting escape and deception toolkit throughout Sherlock-era investigations."
+    ],
+    "source": {"status":"epub-anchored","chapter":296,"note":"Formula, all five Magician principles and multiple core spell-like abilities are explicit in the supplied EPUB."},
+    "spoilerChapter": 296
+  },
+  {
+    "sequence": 6,
+    "name": "Faceless",
+    "promotionChapter": 451,
+    "promotionTitle": "Faceless",
+    "digestionChapter": 660,
+    "identityContext": ["Sherlock Moriarty", "The World", "Gehrman Sparrow"],
+    "formula": {
+      "mainIngredients": ["Mutated pituitary gland of a Thousand-faced Hunter", "Characteristic of a Human-skinned Shadow"],
+      "supplementaryIngredients": ["80 ml Thousand-faced Hunter blood", "5 drops black Jimsonweed juice", "10 grams Dragon Tooth Grass powder", "3 strands of hair from a Deep-sea Naga"]
+    },
+    "actingPrinciples": [
+      "You can disguise yourself as anyone, but you are ultimately yourself.",
+      "Get into character while remaining detached from the role.",
+      "Overcome aversion when acting, but do not become over-immersed.",
+      "Disguise yourself as another person and obtain genuine feedback from others."
+    ],
+    "abilities": ["Appearance and body alteration", "Voice and mannerism imitation", "Advanced identity construction"],
+    "milestones": [
+      "Advances in Backlund.",
+      "Uses multiple identities and lived experiences to refine acting.",
+      "Learns that preserving the self is the core defense against losing control.",
+      "Creates Gehrman Sparrow as a deliberately distinct sea-going persona."
+    ],
+    "source": {"status":"epub-anchored","chapter":451,"note":"Formula and Faceless acting principles are directly described in the supplied EPUB."},
+    "spoilerChapter": 451
+  },
+  {
+    "sequence": 5,
+    "name": "Marionettist",
+    "promotionChapter": 664,
+    "promotionTitle": "Every Second Counts",
+    "digestionChapter": 945,
+    "identityContext": ["Gehrman Sparrow", "The World", "Dwayne Dantès"],
+    "formula": {
+      "mainIngredients": ["Dust of ancient wraiths", "Core crystal of a six-winged gargoyle"],
+      "supplementaryIngredients": ["80 ml spring water from Sonia Island's Golden Spring", "10 grams drago bark", "Remnant spirituality of ancient wraiths", "One pair of eyes from a six-winged gargoyle"]
+    },
+    "ritual": "Consume the potion in the midst of a singing mermaid's song.",
+    "actingPrinciples": [
+      "Avoid personally doing what can be delegated to a marionette when the situation does not require direct action.",
+      "Give each marionette a distinct identity and setting so it behaves as a believable individual."
+    ],
+    "abilities": ["Perceive Spirit Body Threads", "Initial control of a target through Spirit Body Threads", "Transform controlled targets into marionettes", "Control marionettes while retaining their original Beyonder powers"],
+    "milestones": [
+      "Learns the advancement ritual long before he can use it.",
+      "Prepares the potion and sails to where mermaids can be found.",
+      "Drinks the potion while mermaids sing.",
+      "Chapter 665 immediately demonstrates Spirit Body Threads.",
+      "Refines his acting by developing unique marionette identities."
+    ],
+    "source": {"status":"epub-anchored","chapter":664,"note":"Formula, ritual, Spirit Body Thread mechanics and the marionette identity principle are explicit."},
+    "spoilerChapter": 664
+  },
+  {
+    "sequence": 4,
+    "name": "Bizarro Sorcerer",
+    "promotionChapter": 946,
+    "promotionTitle": "A Bestowment Or A Curse",
+    "digestionChapter": null,
+    "identityContext": ["Dwayne Dantès", "Gehrman Sparrow", "The World"],
+    "formula": {
+      "mainIngredients": ["Bizarro Bane's main eye", "True soul body of a Spirit World Plunderer"],
+      "supplementaryIngredients": ["200 ml Bizarro Bane blood", "30 grams Spirit World Plunderer", "10 grams Red-hair Birch bark", "One segment of golden grapevines", "A fingernail-sized self-made rubber mask"]
+    },
+    "ritual": "Using one's own strength and strategy, orchestrate a grand performance before many spectators to kill a demigod-level Beyonder creature, then consume the potion at the end of the performance.",
+    "actingPrinciples": [
+      "Handle matters in deliberately bizarre and eerie ways without needlessly harming innocents.",
+      "Create strange or frightening stories and situations that generate genuine spectator feedback.",
+      "Use the reaction and spread of bizarre legends to accelerate digestion."
+    ],
+    "abilities": ["Allow marionettes to use the Bizarro Sorcerer's Beyonder powers", "Instantly swap positions with a marionette", "Greatly enhance marionette control distance and lifelike behavior", "Qualitative enhancement of previous Seer-pathway deception and transformation abilities"],
+    "milestones": [
+      "Obtains and verifies the Bizarro Sorcerer formula before advancement.",
+      "Completes the demigod-level advancement ritual and reaches Sequence 4.",
+      "Uses eerie urban legends and bizarre performances to accelerate digestion.",
+      "Turns hospitals, historical incidents and frightening legends into acting opportunities while preparing for Scholar of Yore."
+    ],
+    "source": {"status":"epub-anchored","chapter":946,"note":"Formula and ritual are explicit. Later passages directly connect bizarre/eerie performances, spectator feedback and frightening legends to digestion."},
+    "spoilerChapter": 946
+  },
+  {
+    "sequence": 3,
+    "name": "Scholar of Yore",
+    "promotionChapter": 1137,
+    "promotionTitle": "Amidst History",
+    "digestionChapter": 1167,
+    "identityContext": ["Gehrman Sparrow", "The World"],
+    "formula": {
+      "mainIngredients": ["A pair of eyes from a Hound of Fulgrim / Sefirah Castle Keeper", "One Demonic Wolf of Fog transformed heart"],
+      "supplementaryIngredients": ["100 ml Hound of Fulgrim blood", "30 grams White Frost Crystal of a Demonic Wolf of Fog", "A large amount of genuine ancient historical records"]
+    },
+    "ritual": "Be separated from reality for at least three hundred years; consume the potion after becoming history and no longer belonging to the present era.",
+    "actingPrinciples": [
+      "Pursue and reconstruct real ancient history rather than collecting disconnected trivia.",
+      "Approach history as a scholar: connect events, understand causes and recover the actual process behind the past."
+    ],
+    "abilities": ["Historical Void interaction", "Historical projections", "Borrowing power from one's past self"],
+    "milestones": [
+      "Learns that his centuries suspended above the gray fog already satisfy the unusual advancement condition.",
+      "Advances on an isolated Berserk Sea island.",
+      "Uses genuine ancient historical records as supplementary ingredients.",
+      "Links digestion to uncovering and reconstructing hidden history.",
+      "Chapter 1167's Chernobyl revelation completes the Scholar of Yore potion digestion."
+    ],
+    "source": {"status":"epub-anchored","chapter":1137,"note":"Formula, three-hundred-year ritual, Historical Void mechanics and Chapter 1167 full digestion are directly supported."},
+    "spoilerChapter": 1137
+  },
+  {
+    "sequence": 2,
+    "name": "Miracle Invoker",
+    "promotionChapter": 1268,
+    "promotionTitle": "Miracle Invoker",
+    "digestionChapter": 1351,
+    "identityContext": ["The World", "Merlin Hermes"],
+    "formula": {
+      "mainIngredients": ["Heart of the Dark Demonic Wolf / God of Wishes, or the Beyonder characteristic of another Miracle Invoker"],
+      "supplementaryIngredients": ["300 ml Dark Demonic Wolf blood", "One Worm of Time", "One Worm of Star"]
+    },
+    "ritual": "Return a piece of history that has been left behind to the present era.",
+    "actingPrinciples": [
+      "Accumulate wishes by satisfying other people's wishes.",
+      "Create real miracles step by step rather than treating wishes as unlimited power.",
+      "Walk the real world as a wandering magician so people can witness miracles and have their wishes fulfilled."
+    ],
+    "abilities": ["Wishes", "Miracles", "Resurrection-related power", "Further qualitative enhancement of historical abilities"],
+    "milestones": [
+      "Advances to Sequence 2 angel level.",
+      "Discovers that Wishes require accumulated fulfilled wishes rather than unrestricted use.",
+      "Builds the Merlin Hermes identity around satisfying wishes in the real world.",
+      "By Chapter 1316, explicitly states that he has concluded the Miracle Invoker acting principles.",
+      "The final portion of the potion is digested immediately before the Attendant of Mysteries advancement at the end of Chapter 1351."
+    ],
+    "source": {"status":"epub-anchored","chapter":1268,"note":"Formula, historical-return ritual, Wishes mechanism, acting progress and final digestion are directly described."},
+    "spoilerChapter": 1268
+  },
+  {
+    "sequence": 1,
+    "name": "Attendant of Mysteries",
+    "promotionChapter": 1352,
+    "promotionTitle": "Attendant of Mysteries",
+    "digestionChapter": null,
+    "identityContext": ["The World", "The Fool"],
+    "formula": {
+      "mainIngredients": ["One Attendant of Mysteries Beyonder characteristic"],
+      "supplementaryIngredients": ["Nine spirit world specialties"]
+    },
+    "ritual": "Build a town consisting only of marionettes and design a trajectory of fate for every marionette. Their interactions must form a sufficiently realistic living picture that creates a corresponding region in the spirit world; larger, richer and more realistic towns improve the ritual.",
+    "actingPrinciples": [],
+    "digestionMechanism": "After stabilizing his anchors and resisting the awakening of Celestial Worthy, Klein plans to remove the undigested extra Attendant of Mysteries characteristic into an avatar/marionette, leaving himself at the level of a fully digested Attendant of Mysteries.",
+    "abilities": ["Regenerate: restore vanished Spirit Body Threads to eligible materials and turn them into marionettes", "Reassembly / Tampering / Grafting: combine physical objects or abstract concepts into new relationships and effects", "Realm of Mysteries: create an embryonic divine kingdom with concealment", "Deeper control of Sefirah Castle and access to powers nearing Sequence 0"],
+    "milestones": [
+      "Constructs Utopia as the marionette town required by the ritual.",
+      "Uses the town's real-world interactions to produce the matching spirit-world region.",
+      "Advances while Adam is being held back and the ritual effect remains active.",
+      "Chapter 1356 explicitly names Regenerate, Reassembly/Tampering and Realm of Mysteries as the three most important new powers.",
+      "His immediate post-advancement objective becomes qualifying for The Fool apotheosis while resisting Celestial Worthy."
+    ],
+    "source": {"status":"epub-anchored","chapter":1352,"note":"Formula, Utopia ritual, advancement and the three major Sequence 1 powers are directly described. No separate ordinary acting-rule list is asserted."},
+    "spoilerChapter": 1352
+  },
+  {
+    "sequence": 0,
+    "name": "The Fool",
+    "promotionChapter": 1380,
+    "promotionTitle": "A Miracle",
+    "digestionChapter": null,
+    "identityContext": ["The Fool"],
+    "formula": {
+      "mainIngredients": ["The Fool Uniqueness", "Two Attendant of Mysteries Beyonder characteristics apart from one's own characteristic"],
+      "supplementaryIngredients": ["Control at least one quarter of the fog of history"]
+    },
+    "ritual": "Fool time, history, or fate once.",
+    "actingPrinciples": [],
+    "abilities": ["Embodiment of the pathway's corresponding authorities", "Fooling", "Miracles", "Sequence-0 level expression of prior Seer-pathway authorities"],
+    "milestones": [
+      "Learns the apotheosis requirement directly from The Fool Card of Blasphemy.",
+      "Chooses history as the most familiar target for the ritual and develops a plan around making the Tarot Club's belief about an awakening ancient Fool become reality.",
+      "The Fool identity and Klein's personal Sequence progression finally converge.",
+      "The apotheosis is contested during the endgame conflict with Amon.",
+      "The resulting Sequence 0 state becomes inseparable from Sefirah Castle and the larger Lord of Mysteries struggle."
+    ],
+    "source": {"status":"epub-anchored","chapter":1380,"note":"The Fool Card explicitly gives the ingredients and ritual: control part of the fog of history and fool time, history or fate once. The apotheosis event is anchored to Chapter 1380."},
+    "spoilerChapter": 1380
+  }
+]

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "azik-copper-whistle",
+    "name": "Azik's Copper Whistle",
+    "category": "mystical-item",
+    "firstAppearanceChapter": 170,
+    "acquiredChapter": 170,
+    "owner": "klein-moretti",
+    "pathway": "Death",
+    "status": "retained-through-book-1",
+    "spoilerChapter": 170,
+    "sourceStatus": "epub-anchored",
+    "sourceLocator": {"chapter":170,"chapterTitle":"Copper Whistle","sourceType":"epub","verificationStatus":"epub-anchored"},
+    "ownershipHistory": [
+      {"chapter":170,"kind":"acquired","holder":"klein-moretti","summary":"Azik demonstrates the old copper whistle and throws it to Klein so Klein can summon Azik's messenger when he needs to send a letter.","sourceStatus":"epub-anchored"},
+      {"chapter":212,"kind":"retained","holder":"klein-moretti","summary":"After resurrecting and visiting his own grave, Klein recovers the copper whistle that had been buried with him.","sourceStatus":"epub-anchored"},
+      {"chapter":1171,"kind":"retained","holder":"klein-moretti","summary":"After escaping Amon, Klein notes that he had safely placed Azik's copper whistle above the gray fog before losing several other items.","sourceStatus":"epub-anchored"}
+    ]
+  },
+  {
+    "id": "black-emperor-card",
+    "name": "Black Emperor Card",
+    "category": "card-of-blasphemy",
+    "firstAppearanceChapter": 321,
+    "acquiredChapter": 321,
+    "owner": "klein-moretti",
+    "pathway": "Black Emperor",
+    "status": "retained-through-book-1",
+    "spoilerChapter": 321,
+    "sourceStatus": "epub-anchored",
+    "sourceLocator": {"chapter":321,"chapterTitle":"Appearance of A Living Person","sourceType":"epub","verificationStatus":"epub-anchored"},
+    "ownershipHistory": [
+      {"chapter":321,"kind":"acquired","holder":"klein-moretti","summary":"During the Roselle exhibition operation, Klein takes the suspicious bookmark together with decoys and transfers the bookmarks above the gray fog for safekeeping.","sourceStatus":"epub-anchored"},
+      {"chapter":323,"kind":"activated","holder":"klein-moretti","summary":"Klein discovers the bookmark's opening incantation and activates it as the Black Emperor Card of Blasphemy, revealing the pathway information within.","sourceStatus":"epub-anchored"},
+      {"chapter":324,"kind":"retained","holder":"klein-moretti","summary":"Klein deliberately keeps the Black Emperor Card above the gray fog as a precaution after confirming its nature.","sourceStatus":"epub-anchored"}
+    ]
+  },
+  {
+    "id": "creeping-hunger",
+    "name": "Creeping Hunger",
+    "category": "sealed-artifact",
+    "firstAppearanceChapter": 146,
+    "acquiredChapter": 480,
+    "owner": null,
+    "pathway": "Hanged Man",
+    "status": "lost-during-amon-escape",
+    "spoilerChapter": 146,
+    "sourceStatus": "epub-anchored",
+    "sourceLocator": {"chapter":146,"chapterTitle":"Creeping Hunger","sourceType":"epub","verificationStatus":"epub-anchored"},
+    "ownershipHistory": [
+      {"chapter":146,"kind":"allied-contact","holder":"qilangos","summary":"Creeping Hunger is introduced as Vice Admiral Hurricane Qilangos's dangerous mystical glove before Klein ever owns it.","sourceStatus":"epub-anchored"},
+      {"chapter":194,"kind":"retained","holder":"azik-eggers","summary":"Klein receives Azik's letter confirming that Azik obtained Creeping Hunger after killing Qilangos.","sourceStatus":"epub-anchored"},
+      {"chapter":480,"kind":"acquired","holder":"klein-moretti","summary":"Azik hands the sealed glove to Klein after recovering the memories he needed from it; Klein becomes its active holder.","sourceStatus":"epub-anchored"},
+      {"chapter":1171,"kind":"lost","holder":"none","summary":"After Klein's escape from Amon and eventual suicide, he explicitly lists Creeping Hunger among the valuable items he lost and mourns its loss.","sourceStatus":"epub-anchored"}
+    ]
+  },
+  {
+    "id": "sea-god-scepter",
+    "name": "Sea God Scepter",
+    "category": "sealed-artifact",
+    "firstAppearanceChapter": 549,
+    "acquiredChapter": 549,
+    "owner": "alger-wilson",
+    "pathway": "Tyrant",
+    "status": "transferred-to-alger",
+    "spoilerChapter": 549,
+    "sourceStatus": "epub-anchored",
+    "sourceLocator": {"chapter":549,"chapterTitle":"High Elf","sourceType":"epub","verificationStatus":"epub-anchored"},
+    "ownershipHistory": [
+      {"chapter":549,"kind":"acquired","holder":"klein-moretti","summary":"After Kalvetua's death, Klein retrieves the white scepter and names the Sealed Artifact Sea God Scepter before taking it above the gray fog.","sourceStatus":"epub-anchored"},
+      {"chapter":550,"kind":"activated","holder":"klein-moretti","summary":"Klein tests the scepter and establishes its sea, storm, flight, prayer-response, and navigation powers together with its negative effects.","sourceStatus":"epub-anchored"},
+      {"chapter":1390,"kind":"transferred","holder":"alger-wilson","summary":"Before entering slumber, The Fool tells Alger that he can bring the Sea God Scepter for his coming mission while the Sea God prayers are redirected to Klein.","sourceStatus":"epub-anchored"}
+    ]
+  },
+  {
+    "id": "death-knell",
+    "name": "Death Knell",
+    "category": "sealed-artifact",
+    "firstAppearanceChapter": 707,
+    "acquiredChapter": 708,
+    "owner": null,
+    "pathway": "Red Priest",
+    "status": "lost-during-amon-escape",
+    "spoilerChapter": 707,
+    "sourceStatus": "epub-anchored",
+    "sourceLocator": {"chapter":708,"chapterTitle":"Revolver Worth 9,000 Pounds","sourceType":"epub","verificationStatus":"epub-anchored"},
+    "ownershipHistory": [
+      {"chapter":707,"kind":"allied-contact","holder":"ukfa-connerchris","summary":"Ukfa introduces the mystical revolver called Death Knell and Klein shows immediate interest in purchasing it.","sourceStatus":"epub-anchored"},
+      {"chapter":708,"kind":"acquired","holder":"klein-moretti","summary":"Klein receives, evaluates, and purchases Death Knell for 9,000 pounds while maintaining the Gehrman Sparrow persona.","sourceStatus":"epub-anchored"},
+      {"chapter":1171,"kind":"lost","holder":"none","summary":"Klein lists Death Knell among the valuable equipment lost after the Amon escape and his eventual suicide.","sourceStatus":"epub-anchored"}
+    ]
+  },
+  {
+    "id": "arrodes",
+    "name": "Arrodes",
+    "category": "living-sealed-artifact-ally",
+    "firstAppearanceChapter": 417,
+    "acquiredChapter": null,
+    "owner": null,
+    "pathway": null,
+    "status": "recurring-allied-artifact-not-owned",
+    "spoilerChapter": 417,
+    "sourceStatus": "epub-anchored",
+    "sourceLocator": {"chapter":417,"chapterTitle":"Arrodes","sourceType":"epub","verificationStatus":"epub-anchored"},
+    "ownershipHistory": [
+      {"chapter":417,"kind":"allied-contact","holder":"machinery-hivemind","summary":"Klein first directly interacts with the living silver mirror and Arrodes unexpectedly calls itself his loyal and humble servant.","sourceStatus":"epub-anchored"},
+      {"chapter":445,"kind":"allied-contact","holder":"machinery-hivemind","summary":"Arrodes independently reports to Klein through a reflective surface, reinforcing its unusual loyalty despite not belonging to him.","sourceStatus":"epub-anchored"},
+      {"chapter":1298,"kind":"allied-contact","holder":"klein-moretti-companion","summary":"During the Merlin Hermes period, Klein leaves Constant carrying his suitcase with Arrodes accompanying him, reflecting their established companion relationship rather than conventional ownership.","sourceStatus":"epub-anchored"}
+    ]
+  }
+]

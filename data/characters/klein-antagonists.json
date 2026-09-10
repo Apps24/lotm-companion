@@ -1,0 +1,116 @@
+[
+  {
+    "id": "klein-ince-zangwill",
+    "source": "klein-moretti",
+    "target": "ince-zangwill",
+    "displayName": "Ince Zangwill",
+    "group": "antagonists",
+    "types": ["enemy", "tingen-conspirator", "murderer", "revenge-target", "0-08-wielder"],
+    "chapterStart": 19,
+    "chapterEnd": 945,
+    "knowledge": [
+      {"chapterStart": 19, "chapterEnd": 209, "state": "klein-knows-ince-as-wanted-former-archbishop-and-0-08-wielder"},
+      {"chapterStart": 210, "chapterEnd": 212, "state": "ince-knows-klein-moretti-as-a-disruptive-tingen-nighthawk-and-kills-him"},
+      {"chapterStart": 213, "chapterEnd": 939, "state": "klein-identifies-ince-as-his-murderer-and-primary-revenge-target-while-his-survival-remains-hidden"},
+      {"chapterStart": 940, "chapterEnd": 944, "state": "klein-and-allies-direct-a-revenge-trap-around-ince-and-0-08"},
+      {"chapterStart": 945, "chapterEnd": 945, "state": "ince-directly-recognizes-that-klein-moretti-is-alive-during-the-final-confrontation"}
+    ],
+    "spoilerChapter": 19,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-adam",
+    "source": "klein-moretti",
+    "target": "adam",
+    "displayName": "Adam",
+    "group": "antagonists",
+    "types": ["visionary", "twilight-hermit-order", "hidden-director", "amon-ally", "ambiguous-antagonist"],
+    "chapterStart": 945,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 945, "chapterEnd": 1344, "state": "adam-directly-observes-klein-moretti-and-witnesses-his-bizarro-sorcerer-advancement"},
+      {"chapterStart": 1345, "chapterEnd": 1345, "state": "adam-captures-klein-for-amon-and-explicitly-knows-he-is-the-owner-of-sefirah-castle"},
+      {"chapterStart": 1346, "chapterEnd": null, "state": "adam-addresses-klein-as-mysteries-and-treats-him-as-a-potential-lord-of-mysteries"}
+    ],
+    "spoilerChapter": 945,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-zaratul",
+    "source": "klein-moretti",
+    "target": "zaratul",
+    "displayName": "Zaratul",
+    "group": "antagonists",
+    "types": ["same-pathway-rival", "secret-order-leader", "temporary-ally", "attendant-of-mysteries", "enemy"],
+    "chapterStart": 838,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 838, "chapterEnd": 992, "state": "direct-foggy-town-contact-through-gehrman-sparrow-with-mutual-wariness"},
+      {"chapterStart": 993, "chapterEnd": 1084, "state": "zaratul-leaves-his-concealed-prison-and-becomes-an-unlocated-convergence-threat"},
+      {"chapterStart": 1085, "chapterEnd": 1163, "state": "klein-confirms-zaratul-is-in-backlund-and-treats-him-as-an-active-same-pathway-rival"},
+      {"chapterStart": 1164, "chapterEnd": 1164, "state": "temporary-tactical-ally-against-amon-through-zaratuls-historical-projection"},
+      {"chapterStart": 1165, "chapterEnd": 1343, "state": "strategic-rivals-for-seer-pathway-and-sefirah-castle-survival"},
+      {"chapterStart": 1344, "chapterEnd": 1351, "state": "zaratul-openly-attacks-klein-in-utopia-and-cooperates-with-adam-and-suah"},
+      {"chapterStart": 1352, "chapterEnd": null, "state": "klein-defeats-zaratuls-main-body-and-takes-his-sequence-1-characteristic-but-later-doubts-complete-death"}
+    ],
+    "spoilerChapter": 838,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-george-iii",
+    "source": "klein-moretti",
+    "target": "george-augustus-iii",
+    "displayName": "George Augustus III",
+    "group": "antagonists",
+    "types": ["royal-conspirator", "great-smog-culprit", "black-emperor-candidate", "apotheosis-target", "enemy"],
+    "chapterStart": 1024,
+    "chapterEnd": 1148,
+    "knowledge": [
+      {"chapterStart": 1024, "chapterEnd": 1085, "state": "klein-identifies-george-as-a-central-great-smog-conspirator-and-investigation-target"},
+      {"chapterStart": 1086, "chapterEnd": 1145, "state": "klein-understands-georges-black-emperor-apotheosis-plan-and-commits-to-stopping-it"},
+      {"chapterStart": 1146, "chapterEnd": 1147, "state": "george-knows-gehrman-sparrow-is-a-likely-saboteur-and-accepts-zaratuls-help-to-intercept-him"},
+      {"chapterStart": 1148, "chapterEnd": 1148, "state": "kleins-coalition-breaks-the-apotheosis-ritual-and-george-dies-after-losing-control"}
+    ],
+    "spoilerChapter": 1024,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-trissy",
+    "source": "klein-moretti",
+    "target": "trissy",
+    "displayName": "Trissy / Trissy Cheek",
+    "group": "antagonists",
+    "types": ["former-enemy", "demoness", "investigation-target", "uneasy-informant", "temporary-ally"],
+    "chapterStart": 125,
+    "chapterEnd": 1148,
+    "knowledge": [
+      {"chapterStart": 125, "chapterEnd": 469, "state": "klein-identifies-instigator-tris-as-trissy-and-treats-her-as-a-dangerous-demoness-sect-fugitive"},
+      {"chapterStart": 470, "chapterEnd": 977, "state": "trissy-knows-sherlock-moriarty-as-a-beyonder-detective-while-klein-learns-her-trissy-cheek-and-primordial-demoness-connection"},
+      {"chapterStart": 978, "chapterEnd": 1042, "state": "trissy-recognizes-gehrman-sparrow-and-they-enter-an-uneasy-mutually-suspicious-cooperation"},
+      {"chapterStart": 1043, "chapterEnd": 1147, "state": "trissy-provides-royal-conspiracy-intelligence-and-cooperates-with-gehrman-against-george-iii"},
+      {"chapterStart": 1148, "chapterEnd": 1148, "state": "trissy-accepts-primordial-demoness-power-for-a-self-destructive-assault-that-helps-break-george-iiis-apotheosis"}
+    ],
+    "spoilerChapter": 125,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-suah",
+    "source": "klein-moretti",
+    "target": "suah",
+    "displayName": "Abomination Suah",
+    "group": "antagonists",
+    "types": ["enemy", "rose-school-leader", "sequence-1-abomination", "mother-tree-of-desire-faction", "reinette-enemy"],
+    "chapterStart": 729,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 729, "chapterEnd": 734, "state": "suah-remotely-intervenes-against-gehrman-sparrow-before-klein-knows-the-attackers-identity"},
+      {"chapterStart": 735, "chapterEnd": 1146, "state": "klein-identifies-suah-as-rose-school-of-thought-leader-and-an-angel-level-pursuer-connected-to-reinette"},
+      {"chapterStart": 1147, "chapterEnd": 1233, "state": "suah-directly-interferes-with-kleins-george-iii-operation-and-remains-a-known-sequence-1-enemy"},
+      {"chapterStart": 1234, "chapterEnd": 1235, "state": "suah-descends-through-the-rose-school-trap-and-directly-battles-klein-and-reinette"},
+      {"chapterStart": 1236, "chapterEnd": 1343, "state": "suah-remains-an-active-high-level-rose-school-threat-after-the-faoltec-operation"},
+      {"chapterStart": 1344, "chapterEnd": null, "state": "zaratul-uses-a-historical-projection-of-suah-in-the-utopia-ambush-while-the-real-suah-remains-unresolved"}
+    ],
+    "spoilerChapter": 729,
+    "sourceStatus": "epub-anchored"
+  }
+]

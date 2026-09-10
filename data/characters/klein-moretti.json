@@ -1,0 +1,22 @@
+{
+  "id": "klein-moretti",
+  "name": "Klein Moretti",
+  "originalIdentity": "Zhou Mingrui",
+  "pathway": "Fool / Seer",
+  "spoilerChapter": 1,
+  "sourceStatus": "derived-from-epub-anchors",
+  "canonicalDatasets": {
+    "sequenceMilestones": "klein-sequence-milestones.json",
+    "sequenceEvents": ["klein-sequence-events.json", "klein-sequence-events-extra.json"],
+    "sequenceEvidence": "klein-sequence-evidence.json",
+    "identities": "klein-identities.json",
+    "identityEvents": "klein-identity-events.json",
+    "relationships": ["klein-relationships.json", "klein-antagonists.json", "klein-cosmic-antagonists.json"],
+    "relationshipEvents": ["klein-relationship-events.json", "klein-antagonist-events.json", "klein-cosmic-antagonist-events.json"],
+    "items": "klein-items.json",
+    "fights": "klein-fights.json",
+    "locations": "klein-locations.json",
+    "organizations": "klein-organizations.json"
+  },
+  "sourcePolicy": "This file is an index only. Canonical facts live in the referenced EPUB-anchored datasets so identity and Sequence chapter anchors are not duplicated or allowed to drift. Novel prose is not stored."
+}
