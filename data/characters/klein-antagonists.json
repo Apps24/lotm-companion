@@ -5,7 +5,7 @@
     "target": "ince-zangwill",
     "displayName": "Ince Zangwill",
     "group": "antagonists",
-    "types": ["enemy", "tinen-conspirator", "murderer", "revenge-target", "0-08-wielder"],
+    "types": ["enemy", "tingen-conspirator", "murderer", "revenge-target", "0-08-wielder"],
     "chapterStart": 19,
     "chapterEnd": 945,
     "knowledge": [
