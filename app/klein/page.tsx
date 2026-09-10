@@ -11,7 +11,7 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">Phase 2 now prioritizes three canonical layers first: Sequence milestones, identities, and relationships. All visible records carry chapter anchors for the spoiler system.</p>
+        <p className="lead">Sequence milestones come first, followed by identities and evolving relationships. Verified acting principles, rituals and abilities are shown only where the supplied EPUB currently supports them.</p>
       </section>
 
       <section className="graphRoot">
@@ -39,12 +39,45 @@ export default function KleinPage() {
                 </div>
                 <p className="promotionTitle">{step.promotionTitle}</p>
                 {step.digestionChapter && <span>Digestion milestone · Chapter {step.digestionChapter}</span>}
+
                 <div className="milestoneTags">
                   {step.identityContext.map((identity) => <span key={identity}>{identity}</span>)}
                 </div>
-                <ul className="milestoneList">
-                  {step.milestones.map((milestone) => <li key={milestone}>{milestone}</li>)}
-                </ul>
+
+                {'ritual' in step && step.ritual && (
+                  <div className="sequenceDetail">
+                    <strong>Advancement ritual</strong>
+                    <p>{step.ritual}</p>
+                  </div>
+                )}
+
+                <div className="sequenceDetailGrid">
+                  <div className="sequenceDetail">
+                    <strong>Acting principles</strong>
+                    {step.actingPrinciples.length > 0 ? (
+                      <ul>{step.actingPrinciples.map((principle) => <li key={principle}>{principle}</li>)}</ul>
+                    ) : (
+                      <p className="pendingDetail">Pending direct EPUB verification.</p>
+                    )}
+                  </div>
+
+                  <div className="sequenceDetail">
+                    <strong>Core abilities</strong>
+                    {step.abilities.length > 0 ? (
+                      <ul>{step.abilities.map((ability) => <li key={ability}>{ability}</li>)}</ul>
+                    ) : (
+                      <p className="pendingDetail">Pending curated source extraction.</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="sequenceDetail">
+                  <strong>Milestones</strong>
+                  <ul className="milestoneList">
+                    {step.milestones.map((milestone) => <li key={milestone}>{milestone}</li>)}
+                  </ul>
+                </div>
+
                 <small>{step.source.status} · {step.source.note}</small>
               </div>
               {index < milestones.length - 1 && <div className="progressArrow">↓</div>}
@@ -104,8 +137,8 @@ export default function KleinPage() {
       </section>
 
       <section className="principles">
-        <h2>What comes after these three layers</h2>
-        <p>Once these milestone, identity, and relationship anchors are reviewed, Phase 2 will attach potion formula/ritual details, mystical items, fights, locations, organizations, and exact chapter-event source locators to the same nodes.</p>
+        <h2>Phase 2 source rule</h2>
+        <p>Unsupported details remain visibly pending instead of being filled from memory. The next pass will continue direct EPUB extraction for Clown, Bizarro Sorcerer, Attendant of Mysteries and The Fool, then add chapter-aware spoiler filtering.</p>
         <p className="privacyNote">The supplied EPUB remains the primary source. Novel prose is not committed to GitHub.</p>
       </section>
     </main>
