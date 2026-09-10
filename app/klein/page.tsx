@@ -2,6 +2,7 @@ import Link from 'next/link';
 import identities from '@/data/characters/klein-identities.json';
 import milestones from '@/data/characters/klein-sequence-milestones.json';
 import sequenceEvents from '@/data/characters/klein-sequence-events.json';
+import extraSequenceEvents from '@/data/characters/klein-sequence-events-extra.json';
 import sequenceEvidence from '@/data/characters/klein-sequence-evidence.json';
 import relationships from '@/data/characters/klein-relationships.json';
 
@@ -32,7 +33,9 @@ export default function KleinPage() {
         </div>
         <div className="progressionList detailedProgression">
           {milestones.map((step, index) => {
-            const stepEvents = sequenceEvents.filter((event) => event.sequence === step.sequence);
+            const stepEvents = [...sequenceEvents, ...extraSequenceEvents]
+              .filter((event) => event.sequence === step.sequence)
+              .sort((a, b) => a.chapter - b.chapter);
             const digestionEvent = stepEvents.find((event) => event.kind === 'digestion');
 
             return (
