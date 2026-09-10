@@ -17,5 +17,22 @@
     ],
     "spoilerChapter": 19,
     "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-adam",
+    "source": "klein-moretti",
+    "target": "adam",
+    "displayName": "Adam",
+    "group": "antagonists",
+    "types": ["visionary", "twilight-hermit-order", "hidden-director", "amon-ally", "ambiguous-antagonist"],
+    "chapterStart": 945,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 945, "chapterEnd": 1344, "state": "adam-directly-observes-klein-moretti-and-witnesses-his-bizarro-sorcerer-advancement"},
+      {"chapterStart": 1345, "chapterEnd": 1345, "state": "adam-captures-klein-for-amon-and-explicitly-knows-he-is-the-owner-of-sefirah-castle"},
+      {"chapterStart": 1346, "chapterEnd": null, "state": "adam-addresses-klein-as-mysteries-and-treats-him-as-a-potential-lord-of-mysteries"}
+    ],
+    "spoilerChapter": 945,
+    "sourceStatus": "epub-anchored"
   }
 ]
