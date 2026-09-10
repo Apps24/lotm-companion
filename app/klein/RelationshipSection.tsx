@@ -2,10 +2,12 @@ import relationships from '@/data/characters/klein-relationships.json';
 import relationshipEvents from '@/data/characters/klein-relationship-events.json';
 import antagonistRelationships from '@/data/characters/klein-antagonists.json';
 import antagonistEvents from '@/data/characters/klein-antagonist-events.json';
+import cosmicAntagonists from '@/data/characters/klein-cosmic-antagonists.json';
+import cosmicAntagonistEvents from '@/data/characters/klein-cosmic-antagonist-events.json';
 
 export default function RelationshipSection() {
-  const allRelationships = [...relationships, ...antagonistRelationships];
-  const allEvents = [...relationshipEvents, ...antagonistEvents];
+  const allRelationships = [...relationships, ...antagonistRelationships, ...cosmicAntagonists];
+  const allEvents = [...relationshipEvents, ...antagonistEvents, ...cosmicAntagonistEvents];
   const sortedEvents = [...allEvents].sort((a, b) => a.chapter - b.chapter);
 
   return (
@@ -13,7 +15,7 @@ export default function RelationshipSection() {
       <div className="sectionHeading">
         <p className="eyebrow">3 · RELATIONSHIPS · ACTIVE PASS</p>
         <h2>Who knows which version of Klein?</h2>
-        <p className="lead">Relationship edges track knowledge, not only friendship or hostility. Knowing both Gehrman Sparrow and The Fool does not automatically mean a character knows they are the same person; explicit identity links are recorded separately.</p>
+        <p className="lead">Relationship edges track knowledge, not only friendship or hostility. Knowing both Gehrman Sparrow and The Fool does not automatically mean a character knows they are the same person; explicit identity links are recorded separately. Cosmic rivals also distinguish external enemies from the Celestial Worthy's internal resurrection pressure.</p>
       </div>
 
       <div className="sequenceDetail relationshipLegend">
