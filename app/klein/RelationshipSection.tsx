@@ -9,7 +9,12 @@ export default function RelationshipSection() {
       <div className="sectionHeading">
         <p className="eyebrow">3 · RELATIONSHIPS · ACTIVE PASS</p>
         <h2>Who knows which version of Klein?</h2>
-        <p className="lead">Relationship edges track knowledge, not only friendship or hostility: a person may know Klein Moretti, The Fool, The World or another alias without knowing that those identities overlap.</p>
+        <p className="lead">Relationship edges track knowledge, not only friendship or hostility. Knowing both Gehrman Sparrow and The Fool does not automatically mean a character knows they are the same person; explicit identity links are recorded separately.</p>
+      </div>
+
+      <div className="sequenceDetail relationshipLegend">
+        <strong>Knowledge-state rule</strong>
+        <p><b>Alias known</b> means the character has encountered or recognizes that persona. <b>Same-person link</b> is only used when the EPUB supports that the character connects two or more of Klein's identities.</p>
       </div>
 
       <div className="relationshipGroups">
@@ -42,17 +47,21 @@ export default function RelationshipSection() {
         <div className="chapterMilestoneFeed">
           {sortedEvents.map((event) => {
             const relation = relationships.find((item) => item.id === event.relationId);
+            const isIdentityLink = event.kind === 'same-person-link';
+
             return (
               <div className="chapterMilestone" key={`${event.relationId}-${event.chapter}-${event.kind}`}>
                 <div className="chapterMilestoneMeta">
                   <span className="chapterPill">Ch {event.chapter}</span>
-                  <span className="eventKind">{event.kind.replaceAll('-', ' ')}</span>
+                  <span className={`eventKind ${isIdentityLink ? 'event-revelation' : ''}`}>
+                    {event.kind.replaceAll('-', ' ')}
+                  </span>
                 </div>
                 <div>
                   <h4>{relation?.displayName ?? event.relationId}</h4>
                   <p>{event.summary}</p>
                   <div className="milestoneTags">
-                    <span>Knows: {event.knownIdentity}</span>
+                    <span>{isIdentityLink ? 'Identity link' : 'Knows'}: {event.knownIdentity}</span>
                     <span>{event.sourceStatus}</span>
                   </div>
                 </div>
