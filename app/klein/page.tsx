@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import IdentitySection from './IdentitySection';
+import RelationshipSection from './RelationshipSection';
 import milestones from '@/data/characters/klein-sequence-milestones.json';
 import sequenceEvents from '@/data/characters/klein-sequence-events.json';
 import extraSequenceEvents from '@/data/characters/klein-sequence-events-extra.json';
 import sequenceEvidence from '@/data/characters/klein-sequence-evidence.json';
-import relationships from '@/data/characters/klein-relationships.json';
 
 export default function KleinPage() {
   return (
@@ -14,7 +14,7 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">Klein's Sequence 9 → 0 progression is source-anchored first. The active second layer now maps how Zhou Mingrui, Klein Moretti, The Fool, Sherlock Moriarty, The World, Gehrman Sparrow, Dwayne Dantès and Merlin Hermes form and overlap across the story.</p>
+        <p className="lead">Klein's Sequence 9 → 0 progression is source-anchored first. The second layer maps how his identities form and overlap, and the active third layer tracks which version of Klein each important character actually knows at different chapters.</p>
       </section>
 
       <section className="graphRoot">
@@ -143,41 +143,11 @@ export default function KleinPage() {
       </section>
 
       <IdentitySection />
-
-      <section className="sectionBlock mutedSecondaryLayer">
-        <div className="sectionHeading">
-          <p className="eyebrow">3 · RELATIONSHIPS · NEXT</p>
-          <h2>Who knows which version of Klein?</h2>
-        </div>
-        <div className="relationshipGroups">
-          {Array.from(new Set(relationships.map((relation) => relation.group))).map((group) => (
-            <section key={group} className="relationshipGroup">
-              <h3>{group.replaceAll('-', ' ')}</h3>
-              <div className="knowledgeGrid">
-                {relationships.filter((relation) => relation.group === group).map((relation) => (
-                  <article key={relation.id}>
-                    <small>{relation.types.join(' · ')}</small>
-                    <h3>{relation.displayName}</h3>
-                    <p>Connection begins · Chapter {relation.chapterStart}</p>
-                    <div className="knowledgeStates">
-                      {relation.knowledge.map((state) => (
-                        <span key={`${relation.id}-${state.chapterStart}`}>
-                          Ch {state.chapterStart}{state.chapterEnd ? `–${state.chapterEnd}` : '+'}: {state.state.replaceAll('-', ' ')}
-                        </span>
-                      ))}
-                    </div>
-                    <em>{relation.sourceStatus}</em>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      </section>
+      <RelationshipSection />
 
       <section className="principles">
         <h2>Current Phase 2 order</h2>
-        <p><strong>Completed foundation:</strong> Klein's Sequence progression. <strong>Active:</strong> identity transitions and alias purposes. <strong>Next:</strong> relationship knowledge states. Unsupported details remain visibly pending instead of being filled from memory.</p>
+        <p><strong>Foundation:</strong> Klein's Sequence progression. <strong>Expanded:</strong> identity transitions and alias purposes. <strong>Active:</strong> relationship knowledge states, with source-verified edges added first and uncertain edges left marked for review.</p>
         <p className="privacyNote">The supplied EPUB remains the primary source. Novel prose is not committed to GitHub.</p>
       </section>
     </main>
