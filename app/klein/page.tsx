@@ -11,7 +11,7 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">Sequence milestones come first, followed by identities and evolving relationships. Verified acting principles, rituals and abilities are shown only where the supplied EPUB currently supports them.</p>
+        <p className="lead">Sequence milestones are the current priority. Each Sequence is being grounded in the supplied EPUB with promotion, formula, ritual, acting, abilities, digestion and major progression events before identities and relationships receive the next deep pass.</p>
       </section>
 
       <section className="graphRoot">
@@ -44,8 +44,22 @@ export default function KleinPage() {
                   {step.identityContext.map((identity) => <span key={identity}>{identity}</span>)}
                 </div>
 
+                <div className="sequenceDetail formulaBlock">
+                  <strong>Potion formula</strong>
+                  <div className="formulaGrid">
+                    <div>
+                      <small>MAIN INGREDIENTS</small>
+                      <ul>{step.formula.mainIngredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</ul>
+                    </div>
+                    <div>
+                      <small>SUPPLEMENTARY</small>
+                      <ul>{step.formula.supplementaryIngredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</ul>
+                    </div>
+                  </div>
+                </div>
+
                 {'ritual' in step && step.ritual && (
-                  <div className="sequenceDetail">
+                  <div className="sequenceDetail ritualBlock">
                     <strong>Advancement ritual</strong>
                     <p>{step.ritual}</p>
                   </div>
@@ -57,8 +71,10 @@ export default function KleinPage() {
                     {step.actingPrinciples.length > 0 ? (
                       <ul>{step.actingPrinciples.map((principle) => <li key={principle}>{principle}</li>)}</ul>
                     ) : (
-                      <p className="pendingDetail">Pending direct EPUB verification.</p>
+                      <p className="pendingDetail">No consolidated acting-rule list is asserted from the EPUB yet.</p>
                     )}
+                    {'actingEvidence' in step && step.actingEvidence && <p className="evidenceNote">{step.actingEvidence}</p>}
+                    {'digestionMechanism' in step && step.digestionMechanism && <p className="evidenceNote">{step.digestionMechanism}</p>}
                   </div>
 
                   <div className="sequenceDetail">
@@ -86,9 +102,9 @@ export default function KleinPage() {
         </div>
       </section>
 
-      <section className="sectionBlock">
+      <section className="sectionBlock mutedSecondaryLayer">
         <div className="sectionHeading">
-          <p className="eyebrow">2 · IDENTITIES</p>
+          <p className="eyebrow">2 · IDENTITIES · NEXT</p>
           <h2>One person, multiple lives</h2>
         </div>
         <div className="identityGraph">
@@ -105,9 +121,9 @@ export default function KleinPage() {
         </div>
       </section>
 
-      <section className="sectionBlock">
+      <section className="sectionBlock mutedSecondaryLayer">
         <div className="sectionHeading">
-          <p className="eyebrow">3 · RELATIONSHIPS</p>
+          <p className="eyebrow">3 · RELATIONSHIPS · LATER</p>
           <h2>Who knows which version of Klein?</h2>
         </div>
         <div className="relationshipGroups">
@@ -137,8 +153,8 @@ export default function KleinPage() {
       </section>
 
       <section className="principles">
-        <h2>Phase 2 source rule</h2>
-        <p>Unsupported details remain visibly pending instead of being filled from memory. The next pass will continue direct EPUB extraction for Clown, Bizarro Sorcerer, Attendant of Mysteries and The Fool, then add chapter-aware spoiler filtering.</p>
+        <h2>Current Phase 2 order</h2>
+        <p><strong>First:</strong> finish and verify Klein's Sequence progression. <strong>Second:</strong> deepen identity transitions. <strong>Third:</strong> expand relationship knowledge states. Unsupported details remain visibly pending instead of being filled from memory.</p>
         <p className="privacyNote">The supplied EPUB remains the primary source. Novel prose is not committed to GitHub.</p>
       </section>
     </main>
