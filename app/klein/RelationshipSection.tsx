@@ -1,8 +1,12 @@
 import relationships from '@/data/characters/klein-relationships.json';
 import relationshipEvents from '@/data/characters/klein-relationship-events.json';
+import antagonistRelationships from '@/data/characters/klein-antagonists.json';
+import antagonistEvents from '@/data/characters/klein-antagonist-events.json';
 
 export default function RelationshipSection() {
-  const sortedEvents = [...relationshipEvents].sort((a, b) => a.chapter - b.chapter);
+  const allRelationships = [...relationships, ...antagonistRelationships];
+  const allEvents = [...relationshipEvents, ...antagonistEvents];
+  const sortedEvents = [...allEvents].sort((a, b) => a.chapter - b.chapter);
 
   return (
     <section className="sectionBlock">
@@ -14,15 +18,15 @@ export default function RelationshipSection() {
 
       <div className="sequenceDetail relationshipLegend">
         <strong>Knowledge-state rule</strong>
-        <p><b>Alias known</b> means the character has encountered or recognizes that persona. <b>Same-person link</b> is only used when the EPUB supports that the character connects two or more of Klein's identities.</p>
+        <p><b>Alias known</b> means the character has encountered or recognizes that persona. <b>Same-person link</b> is only used when the EPUB supports that the character connects two or more of Klein's identities. Antagonists follow the same rule, including what they know about Klein and what Klein knows about them.</p>
       </div>
 
       <div className="relationshipGroups">
-        {Array.from(new Set(relationships.map((relation) => relation.group))).map((group) => (
+        {Array.from(new Set(allRelationships.map((relation) => relation.group))).map((group) => (
           <section key={group} className="relationshipGroup">
             <h3>{group.replaceAll('-', ' ')}</h3>
             <div className="knowledgeGrid">
-              {relationships.filter((relation) => relation.group === group).map((relation) => (
+              {allRelationships.filter((relation) => relation.group === group).map((relation) => (
                 <article key={relation.id}>
                   <small>{relation.types.join(' · ')}</small>
                   <h3>{relation.displayName}</h3>
@@ -46,7 +50,7 @@ export default function RelationshipSection() {
         <strong>Verified knowledge-state transitions</strong>
         <div className="chapterMilestoneFeed">
           {sortedEvents.map((event) => {
-            const relation = relationships.find((item) => item.id === event.relationId);
+            const relation = allRelationships.find((item) => item.id === event.relationId);
             const isIdentityLink = event.kind === 'same-person-link';
 
             return (
