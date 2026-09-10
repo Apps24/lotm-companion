@@ -16,6 +16,9 @@ tar -xJf /tmp/book1-release.tar.xz -C /tmp/book1-release
 git fetch origin phase/3-7-book1-complete
 git checkout -B phase/3-7-book1-complete origin/phase/3-7-book1-complete
 cp -a /tmp/book1-release/. ./
+# GitHub Actions tokens cannot modify workflow files without workflow permission.
+# Keep the existing CI workflow for this generated commit; it will be upgraded directly after push.
+git checkout origin/phase/3-7-book1-complete -- .github/workflows/ci.yml
 
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
