@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./final.css";
+import "./hotfix.css";
 import type { Metadata } from "next";
 import SiteNav from "./components/SiteNav";
 
