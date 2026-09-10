@@ -55,5 +55,23 @@
     ],
     "spoilerChapter": 838,
     "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-george-iii",
+    "source": "klein-moretti",
+    "target": "george-augustus-iii",
+    "displayName": "George Augustus III",
+    "group": "antagonists",
+    "types": ["royal-conspirator", "great-smog-culprit", "black-emperor-candidate", "apotheosis-target", "enemy"],
+    "chapterStart": 1024,
+    "chapterEnd": 1148,
+    "knowledge": [
+      {"chapterStart": 1024, "chapterEnd": 1085, "state": "klein-identifies-george-as-a-central-great-smog-conspirator-and-investigation-target"},
+      {"chapterStart": 1086, "chapterEnd": 1145, "state": "klein-understands-georges-black-emperor-apotheosis-plan-and-commits-to-stopping-it"},
+      {"chapterStart": 1146, "chapterEnd": 1147, "state": "george-knows-gehrman-sparrow-is-a-likely-saboteur-and-accepts-zaratuls-help-to-intercept-him"},
+      {"chapterStart": 1148, "chapterEnd": 1148, "state": "kleins-coalition-breaks-the-apotheosis-ritual-and-george-dies-after-losing-control"}
+    ],
+    "spoilerChapter": 1024,
+    "sourceStatus": "epub-anchored"
   }
 ]
