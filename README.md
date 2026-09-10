@@ -3,14 +3,18 @@
 Private, spoiler-aware visual companion for **Lord of the Mysteries Book 1**.
 
 ## Current state
-Phase 0: foundation.
+Phase 2: Klein progression knowledge graph.
 
 ## Stack
 - Next.js 16.3.4 Active LTS
 - React 19.2
 - TypeScript
 - static export for Cloudflare Pages
-- Vercel-compatible deployment
+
+## Hosting
+Cloudflare Pages only.
+
+Production: https://lotm-companion.pages.dev
 
 ## Start
 ```bash
@@ -29,4 +33,6 @@ See `AGENTS.md` for ChatGPT/Codex collaboration rules and `docs/ROADMAP.md` for 
 
 ## Current status
 
-Phase 1 is active. The supplied EPUB is parsed into metadata-only manifests: 1,430 chapter entries, 8 volumes and 328 embedded images. Novel prose is intentionally excluded from Git.
+Phase 1 is complete. The supplied EPUB is parsed into metadata-only manifests: 1,430 chapter entries, 8 volumes and 328 embedded images. Novel prose is intentionally excluded from Git.
+
+Phase 2 is in progress on `phase/2-klein-progression`, beginning with Klein identities, Sequence progression, items, fights, relationships and spoiler-aware graph data.
