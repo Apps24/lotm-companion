@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import klein from '@/data/characters/klein-moretti.json';
-import items from '@/data/characters/klein-items.json';
-import fights from '@/data/characters/klein-fights.json';
+import identities from '@/data/characters/klein-identities.json';
+import milestones from '@/data/characters/klein-sequence-milestones.json';
 import relationships from '@/data/characters/klein-relationships.json';
 
 export default function KleinPage() {
@@ -12,12 +11,12 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">A chapter-anchored progression graph for identities, Seer-pathway advancement, mystical items, fights and evolving relationships. Every node is being prepared for spoiler filtering.</p>
+        <p className="lead">Phase 2 now prioritizes three canonical layers first: Sequence milestones, identities, and relationships. All visible records carry chapter anchors for the spoiler system.</p>
       </section>
 
       <section className="graphRoot">
         <div className="rootNode">
-          <small>ORIGINAL IDENTITY</small>
+          <small>ROOT</small>
           <strong>Zhou Mingrui</strong>
           <span>↓</span>
           <strong>Klein Moretti</strong>
@@ -25,84 +24,89 @@ export default function KleinPage() {
       </section>
 
       <section className="sectionBlock">
-        <div className="sectionHeading"><p className="eyebrow">IDENTITY GRAPH</p><h2>Klein → public and occult personas</h2></div>
+        <div className="sectionHeading">
+          <p className="eyebrow">1 · SEQUENCE MILESTONES</p>
+          <h2>Seer pathway · Sequence 9 → Sequence 0</h2>
+        </div>
+        <div className="progressionList detailedProgression">
+          {milestones.map((step, index) => (
+            <article key={step.sequence} className="progressionStep milestoneStep">
+              <div className="sequenceBadge">S{step.sequence}</div>
+              <div className="progressionBody">
+                <div className="milestoneTitleRow">
+                  <h3>{step.name}</h3>
+                  <span className="chapterPill">Ch {step.promotionChapter}</span>
+                </div>
+                <p className="promotionTitle">{step.promotionTitle}</p>
+                {step.digestionChapter && <span>Digestion milestone · Chapter {step.digestionChapter}</span>}
+                <div className="milestoneTags">
+                  {step.identityContext.map((identity) => <span key={identity}>{identity}</span>)}
+                </div>
+                <ul className="milestoneList">
+                  {step.milestones.map((milestone) => <li key={milestone}>{milestone}</li>)}
+                </ul>
+                <small>{step.source.status} · {step.source.note}</small>
+              </div>
+              {index < milestones.length - 1 && <div className="progressArrow">↓</div>}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="sectionBlock">
+        <div className="sectionHeading">
+          <p className="eyebrow">2 · IDENTITIES</p>
+          <h2>One person, multiple lives</h2>
+        </div>
         <div className="identityGraph">
-          {klein.identities.filter((identity) => identity.id !== 'zhou-mingrui' && identity.id !== 'klein-moretti').map((identity) => (
+          {identities.map((identity) => (
             <article key={identity.id} className="identityNode">
               <small>{identity.kind}</small>
               <h3>{identity.name}</h3>
-              <p>Visible from Chapter {identity.spoilerChapter}</p>
-              <span>Active: {identity.chapterStart}{identity.chapterEnd ? `–${identity.chapterEnd}` : '+'}</span>
+              <p>{identity.role}</p>
+              <span>Active: Ch {identity.chapterStart}{identity.chapterEnd ? `–${identity.chapterEnd}` : '+'}</span>
+              {identity.sequenceAtStart !== null && <em>Starts around Sequence {identity.sequenceAtStart}</em>}
+              {'sourceNote' in identity && identity.sourceNote && <small>{identity.sourceNote}</small>}
             </article>
           ))}
         </div>
       </section>
 
       <section className="sectionBlock">
-        <div className="sectionHeading"><p className="eyebrow">SEER PATHWAY</p><h2>Sequence 9 → Sequence 0</h2></div>
-        <div className="progressionList">
-          {klein.sequenceProgression.map((step, index) => (
-            <article key={step.sequence} className="progressionStep">
-              <div className="sequenceBadge">S{step.sequence}</div>
-              <div className="progressionBody">
-                <h3>{step.name}</h3>
-                <p>Promotion · Chapter {step.promotionChapter}</p>
-                {step.digestionChapter && <span>Digestion milestone · Chapter {step.digestionChapter}</span>}
-                <small>{step.sourceStatus}</small>
+        <div className="sectionHeading">
+          <p className="eyebrow">3 · RELATIONSHIPS</p>
+          <h2>Who knows which version of Klein?</h2>
+        </div>
+        <div className="relationshipGroups">
+          {Array.from(new Set(relationships.map((relation) => relation.group))).map((group) => (
+            <section key={group} className="relationshipGroup">
+              <h3>{group.replaceAll('-', ' ')}</h3>
+              <div className="knowledgeGrid">
+                {relationships.filter((relation) => relation.group === group).map((relation) => (
+                  <article key={relation.id}>
+                    <small>{relation.types.join(' · ')}</small>
+                    <h3>{relation.displayName}</h3>
+                    <p>Connection begins · Chapter {relation.chapterStart}</p>
+                    <div className="knowledgeStates">
+                      {relation.knowledge.map((state) => (
+                        <span key={`${relation.id}-${state.chapterStart}`}>
+                          Ch {state.chapterStart}{state.chapterEnd ? `–${state.chapterEnd}` : '+'}: {state.state.replaceAll('-', ' ')}
+                        </span>
+                      ))}
+                    </div>
+                    <em>{relation.sourceStatus}</em>
+                  </article>
+                ))}
               </div>
-              {index < klein.sequenceProgression.length - 1 && <div className="progressArrow">↓</div>}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="sectionBlock">
-        <div className="sectionHeading"><p className="eyebrow">MYSTICAL ITEMS</p><h2>Ownership and equipment nodes</h2></div>
-        <div className="knowledgeGrid">
-          {items.map((item) => (
-            <article key={item.id}>
-              <small>{item.category}</small>
-              <h3>{item.name}</h3>
-              <p>{item.pathway ? `${item.pathway} pathway` : 'Pathway link under review'}</p>
-              <span>{item.acquiredChapter ? `Klein acquisition · Ch ${item.acquiredChapter}` : 'Chapter anchor under review'}</span>
-              <em>{item.status}</em>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="sectionBlock">
-        <div className="sectionHeading"><p className="eyebrow">FIGHT GRAPH</p><h2>Major combat nodes seeded so far</h2></div>
-        <div className="knowledgeGrid">
-          {fights.map((fight) => (
-            <article key={fight.id}>
-              <small>CH {fight.chapterStart}{fight.chapterEnd !== fight.chapterStart ? `–${fight.chapterEnd}` : ''}</small>
-              <h3>{fight.name}</h3>
-              <p>Opponent: {fight.opponents.join(', ')}</p>
-              <span>Outcome · {fight.outcome}</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="sectionBlock">
-        <div className="sectionHeading"><p className="eyebrow">RELATIONSHIPS</p><h2>Connections that evolve by chapter</h2></div>
-        <div className="knowledgeGrid">
-          {relationships.map((relation) => (
-            <article key={relation.id}>
-              <small>{relation.types.join(' · ')}</small>
-              <h3>{relation.target.replaceAll('-', ' ')}</h3>
-              <p>Connection begins · Chapter {relation.chapterStart}</p>
-              <span>{relation.knowledge.map((state) => `${state.chapterStart}: ${state.state.replaceAll('-', ' ')}`).join(' → ')}</span>
-            </article>
+            </section>
           ))}
         </div>
       </section>
 
       <section className="principles">
-        <h2>Source status</h2>
-        <p>{klein.sourcePolicy}</p>
-        <p className="privacyNote">The EPUB is the primary source. External references are used only to cross-check structured facts; uncertain anchors remain explicitly marked for review.</p>
+        <h2>What comes after these three layers</h2>
+        <p>Once these milestone, identity, and relationship anchors are reviewed, Phase 2 will attach potion formula/ritual details, mystical items, fights, locations, organizations, and exact chapter-event source locators to the same nodes.</p>
+        <p className="privacyNote">The supplied EPUB remains the primary source. Novel prose is not committed to GitHub.</p>
       </section>
     </main>
   );
