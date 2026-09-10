@@ -1,13 +1,180 @@
 [
-  {"id":"klein-benson","source":"klein-moretti","target":"benson-moretti","displayName":"Benson Moretti","group":"family","types":["older-brother","family","emotional-anchor"],"chapterStart":1,"chapterEnd":null,"knowledge":[{"chapterStart":1,"chapterEnd":210,"state":"knows-klein-moretti-as-brother"},{"chapterStart":211,"chapterEnd":null,"state":"believes-klein-moretti-dead"}],"spoilerChapter":1,"sourceStatus":"epub-anchored"},
-  {"id":"klein-melissa","source":"klein-moretti","target":"melissa-moretti","displayName":"Melissa Moretti","group":"family","types":["younger-sister","family","emotional-anchor"],"chapterStart":1,"chapterEnd":null,"knowledge":[{"chapterStart":1,"chapterEnd":210,"state":"knows-klein-moretti-as-brother"},{"chapterStart":211,"chapterEnd":null,"state":"believes-klein-moretti-dead"}],"spoilerChapter":1,"sourceStatus":"epub-anchored"},
-  {"id":"klein-dunn","source":"klein-moretti","target":"dunn-smith","displayName":"Dunn Smith","group":"nighthawks","types":["investigator","captain","mentor","ally"],"chapterStart":12,"chapterEnd":210,"knowledge":[{"chapterStart":12,"chapterEnd":210,"state":"knows-klein-moretti-and-nighthawk-colleague"}],"spoilerChapter":12,"sourceStatus":"epub-anchored"},
-  {"id":"klein-leonard","source":"klein-moretti","target":"leonard-mitchell","displayName":"Leonard Mitchell / The Star","group":"nighthawks-tarot","types":["colleague","ally","later-tarot-member"],"chapterStart":21,"chapterEnd":null,"knowledge":[{"chapterStart":21,"chapterEnd":210,"state":"knows-klein-moretti-as-nighthawk-colleague"},{"chapterStart":211,"chapterEnd":950,"state":"believes-klein-died-but-later-learns-he-survived"},{"chapterStart":951,"chapterEnd":null,"state":"knows-klein-moretti-is-the-world-and-joins-tarot-club"}],"spoilerChapter":21,"sourceStatus":"epub-anchored"},
-  {"id":"klein-audrey","source":"klein-moretti","target":"audrey-hall","displayName":"Audrey Hall / Justice","group":"tarot-club","types":["tarot-member","trade-partner","psychological-support"],"chapterStart":6,"chapterEnd":null,"knowledge":[{"chapterStart":6,"chapterEnd":6,"state":"knows-unknown-gray-fog-host"},{"chapterStart":7,"chapterEnd":263,"state":"knows-the-fool-persona"},{"chapterStart":264,"chapterEnd":null,"state":"knows-the-fool-and-the-world-as-separate-personas"}],"spoilerChapter":6,"sourceStatus":"epub-anchored"},
-  {"id":"klein-alger","source":"klein-moretti","target":"alger-wilson","displayName":"Alger Wilson / The Hanged Man","group":"tarot-club","types":["tarot-member","trade-partner","intelligence-source"],"chapterStart":6,"chapterEnd":null,"knowledge":[{"chapterStart":6,"chapterEnd":6,"state":"knows-unknown-gray-fog-host"},{"chapterStart":7,"chapterEnd":263,"state":"knows-the-fool-persona"},{"chapterStart":264,"chapterEnd":null,"state":"knows-the-fool-and-the-world-as-separate-personas"}],"spoilerChapter":6,"sourceStatus":"epub-anchored"},
-  {"id":"klein-azik","source":"klein-moretti","target":"azik-eggers","displayName":"Azik Eggers","group":"mentor-ally","types":["teacher","mentor","protector","ally"],"chapterStart":1,"chapterEnd":null,"knowledge":[{"chapterStart":1,"chapterEnd":null,"state":"knows-klein-moretti-across-his-supernatural-development"}],"spoilerChapter":1,"sourceStatus":"phase-2-review"},
-  {"id":"klein-sharron","source":"klein-moretti","target":"sharron","displayName":"Sharron","group":"backlund-allies","types":["ally","client-partner","identity-support"],"chapterStart":232,"chapterEnd":null,"knowledge":[{"chapterStart":232,"chapterEnd":482,"state":"knows-sherlock-moriarty"},{"chapterStart":483,"chapterEnd":null,"state":"supports-new-identities-including-gehrman"}],"spoilerChapter":232,"sourceStatus":"phase-2-review"},
-  {"id":"klein-danitz","source":"klein-moretti","target":"danitz","displayName":"Danitz","group":"sea-allies","types":["captive-to-ally","companion","fool-believer"],"chapterStart":483,"chapterEnd":null,"knowledge":[{"chapterStart":483,"chapterEnd":null,"state":"knows-gehrman-sparrow"}],"spoilerChapter":483,"sourceStatus":"phase-2-review"},
-  {"id":"klein-reinette","source":"klein-moretti","target":"reinette-tinekerr","displayName":"Reinette Tinekerr","group":"high-level-allies","types":["messenger","ally","protector"],"chapterStart":483,"chapterEnd":null,"knowledge":[{"chapterStart":483,"chapterEnd":null,"state":"supernatural-ally-aware-of-multiple-klein-contexts"}],"spoilerChapter":483,"sourceStatus":"phase-2-review"},
-  {"id":"klein-amon","source":"klein-moretti","target":"amon","displayName":"Amon","group":"antagonists","types":["enemy","rival","lord-of-mysteries-competitor"],"chapterStart":362,"chapterEnd":null,"knowledge":[{"chapterStart":362,"chapterEnd":null,"state":"escalating-mutual-awareness"}],"spoilerChapter":362,"sourceStatus":"phase-2-review"}
+  {
+    "id": "klein-benson",
+    "source": "klein-moretti",
+    "target": "benson-moretti",
+    "displayName": "Benson Moretti",
+    "group": "family",
+    "types": ["older-brother", "family", "emotional-anchor"],
+    "chapterStart": 1,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 1, "chapterEnd": 210, "state": "knows-klein-moretti-as-brother"},
+      {"chapterStart": 211, "chapterEnd": null, "state": "believes-klein-moretti-dead"}
+    ],
+    "spoilerChapter": 1,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-melissa",
+    "source": "klein-moretti",
+    "target": "melissa-moretti",
+    "displayName": "Melissa Moretti",
+    "group": "family",
+    "types": ["younger-sister", "family", "emotional-anchor"],
+    "chapterStart": 1,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 1, "chapterEnd": 210, "state": "knows-klein-moretti-as-brother"},
+      {"chapterStart": 211, "chapterEnd": null, "state": "believes-klein-moretti-dead"}
+    ],
+    "spoilerChapter": 1,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-dunn",
+    "source": "klein-moretti",
+    "target": "dunn-smith",
+    "displayName": "Dunn Smith",
+    "group": "nighthawks",
+    "types": ["investigator", "captain", "mentor", "ally"],
+    "chapterStart": 12,
+    "chapterEnd": 210,
+    "knowledge": [
+      {"chapterStart": 12, "chapterEnd": 210, "state": "knows-klein-moretti-and-nighthawk-colleague"}
+    ],
+    "spoilerChapter": 12,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-leonard",
+    "source": "klein-moretti",
+    "target": "leonard-mitchell",
+    "displayName": "Leonard Mitchell / The Star",
+    "group": "nighthawks-tarot",
+    "types": ["colleague", "ally", "later-tarot-member"],
+    "chapterStart": 21,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 21, "chapterEnd": 210, "state": "knows-klein-moretti-as-nighthawk-colleague"},
+      {"chapterStart": 211, "chapterEnd": 950, "state": "believes-klein-died-but-later-learns-he-survived"},
+      {"chapterStart": 951, "chapterEnd": null, "state": "knows-klein-moretti-is-the-world-and-joins-tarot-club"}
+    ],
+    "spoilerChapter": 21,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-audrey",
+    "source": "klein-moretti",
+    "target": "audrey-hall",
+    "displayName": "Audrey Hall / Justice",
+    "group": "tarot-club",
+    "types": ["tarot-member", "trade-partner", "psychological-support"],
+    "chapterStart": 6,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 6, "chapterEnd": 6, "state": "knows-unknown-gray-fog-host"},
+      {"chapterStart": 7, "chapterEnd": 263, "state": "knows-the-fool-persona"},
+      {"chapterStart": 264, "chapterEnd": null, "state": "knows-the-fool-and-the-world-as-separate-personas"}
+    ],
+    "spoilerChapter": 6,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-alger",
+    "source": "klein-moretti",
+    "target": "alger-wilson",
+    "displayName": "Alger Wilson / The Hanged Man",
+    "group": "tarot-club",
+    "types": ["tarot-member", "trade-partner", "intelligence-source"],
+    "chapterStart": 6,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 6, "chapterEnd": 6, "state": "knows-unknown-gray-fog-host"},
+      {"chapterStart": 7, "chapterEnd": 263, "state": "knows-the-fool-persona"},
+      {"chapterStart": 264, "chapterEnd": null, "state": "knows-the-fool-and-the-world-as-separate-personas"}
+    ],
+    "spoilerChapter": 6,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-azik",
+    "source": "klein-moretti",
+    "target": "azik-eggers",
+    "displayName": "Azik Eggers",
+    "group": "mentor-ally",
+    "types": ["teacher", "mentor", "protector", "ally"],
+    "chapterStart": 1,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 1, "chapterEnd": 97, "state": "knows-klein-moretti-from-khoy-university"},
+      {"chapterStart": 98, "chapterEnd": 210, "state": "knows-klein-moretti-and-warns-him-about-fate-disharmony"},
+      {"chapterStart": 211, "chapterEnd": null, "state": "continues-as-trusted-supernatural-ally-of-klein-moretti"}
+    ],
+    "spoilerChapter": 1,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-sharron",
+    "source": "klein-moretti",
+    "target": "sharron",
+    "displayName": "Sharron",
+    "group": "backlund-allies",
+    "types": ["bodyguard", "ally", "client-partner", "identity-support"],
+    "chapterStart": 247,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 247, "chapterEnd": 482, "state": "knows-sherlock-moriarty-as-beyonder-client-and-ally"},
+      {"chapterStart": 483, "chapterEnd": null, "state": "knows-gehrman-sparrow-is-kleins-new-sea-identity"}
+    ],
+    "spoilerChapter": 247,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-danitz",
+    "source": "klein-moretti",
+    "target": "danitz",
+    "displayName": "Danitz",
+    "group": "sea-allies",
+    "types": ["hostage-to-ally", "companion", "fool-believer", "missionary"],
+    "chapterStart": 498,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 498, "chapterEnd": 930, "state": "knows-klein-publicly-as-gehrman-sparrow"},
+      {"chapterStart": 931, "chapterEnd": null, "state": "knows-gehrman-sparrow-and-separately-believes-in-the-fool"}
+    ],
+    "spoilerChapter": 498,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-reinette",
+    "source": "klein-moretti",
+    "target": "reinette-tinekerr",
+    "displayName": "Reinette Tinekerr",
+    "group": "high-level-allies",
+    "types": ["messenger", "ally", "protector"],
+    "chapterStart": 561,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 561, "chapterEnd": 1161, "state": "contracted-as-the-messenger-belonging-to-gehrman-sparrow"},
+      {"chapterStart": 1162, "chapterEnd": null, "state": "demonstrates-knowledge-that-gehrman-sparrow-is-klein-moretti"}
+    ],
+    "spoilerChapter": 561,
+    "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-amon",
+    "source": "klein-moretti",
+    "target": "amon",
+    "displayName": "Amon",
+    "group": "antagonists",
+    "types": ["enemy", "rival", "sefirah-castle-competitor"],
+    "chapterStart": 1151,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 1151, "chapterEnd": null, "state": "knows-klein-gehrman-is-the-fool-and-owner-of-sefirah-castle"}
+    ],
+    "spoilerChapter": 1151,
+    "sourceStatus": "epub-anchored"
+  }
 ]
