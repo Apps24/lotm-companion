@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import ReaderCompanionPanel from './ReaderCompanionPanel';
 import { clearActiveEpub, loadActiveEpub, saveActiveEpub } from '@/lib/reader/idb';
 import { loadEpub, renderEpubChapter, revokeRenderedAssets, type LoadedReaderBook } from '@/lib/reader/epub';
 import type { ReaderPreferences, RenderedReaderChapter } from '@/lib/reader/types';
@@ -22,15 +23,12 @@ const defaultPreferences: ReaderPreferences = {
   speechPitch: 1,
 };
 
-function clamp(value: number, min: number, max: number) {
-  return Math.min(max, Math.max(min, value));
-}
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
-function getInitialPreferences(): ReaderPreferences {
+function readPreferences(): ReaderPreferences {
   if (typeof window === 'undefined') return defaultPreferences;
   try {
-    const saved = JSON.parse(window.localStorage.getItem(PREFS_KEY) ?? '{}') as Partial<ReaderPreferences>;
-    return { ...defaultPreferences, ...saved };
+    return { ...defaultPreferences, ...(JSON.parse(window.localStorage.getItem(PREFS_KEY) ?? '{}') as Partial<ReaderPreferences>) };
   } catch {
     return defaultPreferences;
   }
@@ -41,7 +39,6 @@ export default function ReaderClient() {
   const [fileName, setFileName] = useState('');
   const [chapterNumber, setChapterNumber] = useState(1);
   const [rendered, setRendered] = useState<RenderedReaderChapter | null>(null);
-  const renderedRef = useRef<RenderedReaderChapter | null>(null);
   const [loading, setLoading] = useState(false);
   const [restoreAttempted, setRestoreAttempted] = useState(false);
   const [error, setError] = useState('');
@@ -53,13 +50,14 @@ export default function ReaderClient() {
   const [speechState, setSpeechState] = useState<'idle' | 'playing' | 'paused'>('idle');
   const [speechIndex, setSpeechIndex] = useState(0);
   const [readProgress, setReadProgress] = useState(0);
+  const renderedRef = useRef<RenderedReaderChapter | null>(null);
   const speechSession = useRef(0);
   const articleRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => setPreferences(getInitialPreferences()), []);
+  useEffect(() => setPreferences(readPreferences()), []);
   useEffect(() => {
-    window.localStorage.setItem(PREFS_KEY, JSON.stringify(preferences));
+    if (typeof window !== 'undefined') window.localStorage.setItem(PREFS_KEY, JSON.stringify(preferences));
   }, [preferences]);
 
   useEffect(() => {
@@ -77,15 +75,17 @@ export default function ReaderClient() {
 
   const selectChapter = useCallback((value: number, availableBook = book) => {
     if (!availableBook?.metadata.chapters.length) return;
-    const maxChapter = availableBook.metadata.chapters.at(-1)?.number ?? 1;
-    const next = clamp(Math.round(value), 1, maxChapter);
+    const first = availableBook.metadata.chapters[0]?.number ?? 1;
+    const last = availableBook.metadata.chapters.at(-1)?.number ?? first;
+    const next = clamp(Math.round(value), first, last);
     if (!availableBook.metadata.chapters.some((chapter) => chapter.number === next)) return;
+
     stopNarration();
     setChapterNumber(next);
     setDrawerOpen(false);
     window.localStorage.setItem(LAST_CHAPTER_KEY, String(next));
-    const existingSpoiler = Number(window.localStorage.getItem(SPOILER_KEY) ?? 1);
-    if (!Number.isFinite(existingSpoiler) || next > existingSpoiler) window.localStorage.setItem(SPOILER_KEY, String(next));
+    const spoiler = Number(window.localStorage.getItem(SPOILER_KEY) ?? 1);
+    if (!Number.isFinite(spoiler) || next > spoiler) window.localStorage.setItem(SPOILER_KEY, String(next));
     const url = new URL(window.location.href);
     url.searchParams.set('chapter', String(next));
     window.history.replaceState({}, '', url);
@@ -102,15 +102,16 @@ export default function ReaderClient() {
       setFileName(file.name);
       const requested = Number(new URLSearchParams(window.location.search).get('chapter'));
       const saved = Number(window.localStorage.getItem(LAST_CHAPTER_KEY));
-      const preferred = Number.isFinite(requested) && requested > 0 ? requested : Number.isFinite(saved) && saved > 0 ? saved : loaded.metadata.chapters[0]?.number ?? 1;
-      const matched = loaded.metadata.chapters.some((chapter) => chapter.number === preferred) ? preferred : loaded.metadata.chapters[0]?.number ?? 1;
-      setChapterNumber(matched);
+      const preferred = Number.isFinite(requested) && requested > 0
+        ? requested
+        : Number.isFinite(saved) && saved > 0 ? saved : loaded.metadata.chapters[0]?.number ?? 1;
+      const selected = loaded.metadata.chapters.some((chapter) => chapter.number === preferred)
+        ? preferred
+        : loaded.metadata.chapters[0]?.number ?? 1;
+      setChapterNumber(selected);
       if (persist) {
-        try {
-          await saveActiveEpub(file);
-        } catch (storageError) {
-          console.warn('EPUB opened, but browser storage could not retain the file.', storageError);
-        }
+        try { await saveActiveEpub(file); }
+        catch (storageError) { console.warn('EPUB opened, but browser storage could not retain the file.', storageError); }
       }
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : 'Unable to open this EPUB.');
@@ -122,9 +123,7 @@ export default function ReaderClient() {
   useEffect(() => {
     let cancelled = false;
     loadActiveEpub()
-      .then((file) => {
-        if (!cancelled && file) return openEpubFile(file, false);
-      })
+      .then((file) => { if (!cancelled && file) return openEpubFile(file, false); })
       .catch(() => undefined)
       .finally(() => { if (!cancelled) setRestoreAttempted(true); });
     return () => { cancelled = true; };
@@ -150,12 +149,12 @@ export default function ReaderClient() {
         requestAnimationFrame(() => {
           const savedPercent = Number(window.localStorage.getItem(`lotmReaderPosition:${chapterNumber}`) ?? 0);
           if (savedPercent > 0 && savedPercent < 1) {
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
             window.scrollTo({ top: maxScroll * savedPercent });
           }
         });
       })
-      .catch((reason) => !cancelled && setError(reason instanceof Error ? reason.message : 'Unable to render this chapter.'));
+      .catch((reason) => { if (!cancelled) setError(reason instanceof Error ? reason.message : 'Unable to render this chapter.'); });
     return () => { cancelled = true; };
   }, [book, currentChapter, chapterNumber]);
 
@@ -215,6 +214,7 @@ export default function ReaderClient() {
       utterance.onerror = () => token === speechSession.current && setSpeechState('idle');
       window.speechSynthesis.speak(utterance);
     };
+
     speak(clamp(startIndex, 0, rendered.blocks.length - 1));
   }, [preferences.speechPitch, preferences.speechRate, preferences.voiceURI, rendered, speechIndex, voices]);
 
@@ -242,27 +242,20 @@ export default function ReaderClient() {
 
   const importFile = (file?: File) => {
     if (!file) return;
-    if (!file.name.toLowerCase().endsWith('.epub')) {
-      setError('Please choose an .epub file.');
-      return;
-    }
+    if (!file.name.toLowerCase().endsWith('.epub')) return setError('Please choose an .epub file.');
     void openEpubFile(file, true);
   };
 
   if (!book) {
     return <section className="readerImportShell">
-      <div
-        className="readerDropZone"
-        onDragOver={(event) => event.preventDefault()}
-        onDrop={(event) => { event.preventDefault(); importFile(event.dataTransfer.files[0]); }}
-      >
+      <div className="readerDropZone" onDragOver={(event) => event.preventDefault()} onDrop={(event) => { event.preventDefault(); importFile(event.dataTransfer.files[0]); }}>
         <span className="readerImportIcon">◈</span>
         <p className="eyebrow">PRIVATE · LOCAL-FIRST</p>
         <h2>{loading ? 'Opening EPUB…' : 'Import your LOTM EPUB'}</h2>
         <p>The book is parsed in your browser. Novel text and original EPUB images are not uploaded to this site or committed to GitHub.</p>
         <button type="button" className="primaryButton" disabled={loading} onClick={() => fileInputRef.current?.click()}>{loading ? 'Reading file…' : 'Choose EPUB'}</button>
         <input ref={fileInputRef} hidden type="file" accept=".epub,application/epub+zip" onChange={(event) => importFile(event.target.files?.[0])}/>
-        {restoreAttempted && <small>Tip: after a successful import, the browser will try to remember this EPUB in IndexedDB.</small>}
+        {restoreAttempted && <small>After a successful import, the browser will try to remember this EPUB in IndexedDB.</small>}
       </div>
       {error && <p className="readerError">{error}</p>}
     </section>;
@@ -281,6 +274,7 @@ export default function ReaderClient() {
         <div><small>{fileName}</small><strong>Chapter {chapterNumber}{currentChapter ? ` · ${currentChapter.title}` : ''}</strong></div>
       </div>
       <div className="readerToolbarActions">
+        <ReaderCompanionPanel chapterNumber={chapterNumber}/>
         <button type="button" onClick={() => setSettingsOpen((open) => !open)}>Aa</button>
         <button type="button" onClick={() => fileInputRef.current?.click()}>Replace EPUB</button>
         <button type="button" onClick={forgetBook}>Forget</button>
@@ -312,10 +306,7 @@ export default function ReaderClient() {
         <button type="button" disabled={!next} onClick={() => next && selectChapter(next.number)}>{next ? `Chapter ${next.number}` : 'End'} →</button>
       </nav>
 
-      <article
-        className={`readerPaper ${preferences.paragraphIndent ? 'indentParagraphs' : ''} ${preferences.fontFamily === 'sans' ? 'sansReader' : ''}`}
-        style={{ maxWidth: preferences.contentWidth, fontSize: preferences.fontSize, lineHeight: preferences.lineHeight }}
-      >
+      <article className={`readerPaper ${preferences.paragraphIndent ? 'indentParagraphs' : ''} ${preferences.fontFamily === 'sans' ? 'sansReader' : ''}`} style={{ maxWidth: preferences.contentWidth, fontSize: preferences.fontSize, lineHeight: preferences.lineHeight }}>
         <header className="readerChapterHeading"><p className="eyebrow">PERSONAL EPUB · CHAPTER {chapterNumber}</p><h1>{currentChapter?.title ?? `Chapter ${chapterNumber}`}</h1></header>
         {error && <p className="readerError">{error}</p>}
         {!rendered && !error && <div className="readerLoading">Preparing chapter…</div>}
