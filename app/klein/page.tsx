@@ -2,6 +2,7 @@ import Link from 'next/link';
 import identities from '@/data/characters/klein-identities.json';
 import milestones from '@/data/characters/klein-sequence-milestones.json';
 import sequenceEvents from '@/data/characters/klein-sequence-events.json';
+import sequenceEvidence from '@/data/characters/klein-sequence-evidence.json';
 import relationships from '@/data/characters/klein-relationships.json';
 
 export default function KleinPage() {
@@ -12,7 +13,7 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">Sequence milestones are the current priority. Each Sequence is grounded in the supplied EPUB with promotion, formula, ritual, acting, abilities, digestion and a chapter-by-chapter progression feed before identities and relationships receive the next deep pass.</p>
+        <p className="lead">Sequence milestones are the current priority. Each Sequence is grounded in the supplied EPUB with promotion, formula, ritual, acting, abilities, digestion, ingredient acquisition and a chapter-by-chapter evidence feed before identities and relationships receive the next deep pass.</p>
       </section>
 
       <section className="graphRoot">
@@ -95,18 +96,30 @@ export default function KleinPage() {
                   <div className="sequenceDetail">
                     <strong>Chapter-by-chapter progression</strong>
                     <div className="chapterMilestoneFeed">
-                      {stepEvents.map((event) => (
-                        <div className="chapterMilestone" key={`${event.sequence}-${event.chapter}-${event.kind}`}>
-                          <div className="chapterMilestoneMeta">
-                            <span className="chapterPill">Ch {event.chapter}</span>
-                            <span className={`eventKind event-${event.kind}`}>{event.kind.replaceAll('-', ' ')}</span>
+                      {stepEvents.map((event) => {
+                        const evidence = sequenceEvidence.find((item) => item.sequence === event.sequence && item.chapter === event.chapter && item.kind === event.kind);
+
+                        return (
+                          <div className="chapterMilestone" key={`${event.sequence}-${event.chapter}-${event.kind}`}>
+                            <div className="chapterMilestoneMeta">
+                              <span className="chapterPill">Ch {event.chapter}</span>
+                              <span className={`eventKind event-${event.kind}`}>{event.kind.replaceAll('-', ' ')}</span>
+                            </div>
+                            <div>
+                              <h4>{event.title}</h4>
+                              <p>{event.summary}</p>
+                              {evidence && (
+                                <div className="eventEvidence">
+                                  <small>VERIFIED DETAIL · {evidence.confidence}</small>
+                                  <ul>
+                                    {evidence.details.map((detail) => <li key={detail}>{detail}</li>)}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
                           </div>
-                          <div>
-                            <h4>{event.title}</h4>
-                            <p>{event.summary}</p>
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
 
