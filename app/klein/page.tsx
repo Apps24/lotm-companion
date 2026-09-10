@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import identities from '@/data/characters/klein-identities.json';
 import milestones from '@/data/characters/klein-sequence-milestones.json';
+import sequenceEvents from '@/data/characters/klein-sequence-events.json';
 import relationships from '@/data/characters/klein-relationships.json';
 
 export default function KleinPage() {
@@ -11,7 +12,7 @@ export default function KleinPage() {
       <section className="compactHero">
         <p className="eyebrow">PHASE 2 · KLEIN KNOWLEDGE GRAPH</p>
         <h1>Klein Moretti</h1>
-        <p className="lead">Sequence milestones are the current priority. Each Sequence is being grounded in the supplied EPUB with promotion, formula, ritual, acting, abilities, digestion and major progression events before identities and relationships receive the next deep pass.</p>
+        <p className="lead">Sequence milestones are the current priority. Each Sequence is grounded in the supplied EPUB with promotion, formula, ritual, acting, abilities, digestion and a chapter-by-chapter progression feed before identities and relationships receive the next deep pass.</p>
       </section>
 
       <section className="graphRoot">
@@ -29,76 +30,99 @@ export default function KleinPage() {
           <h2>Seer pathway · Sequence 9 → Sequence 0</h2>
         </div>
         <div className="progressionList detailedProgression">
-          {milestones.map((step, index) => (
-            <article key={step.sequence} className="progressionStep milestoneStep">
-              <div className="sequenceBadge">S{step.sequence}</div>
-              <div className="progressionBody">
-                <div className="milestoneTitleRow">
-                  <h3>{step.name}</h3>
-                  <span className="chapterPill">Ch {step.promotionChapter}</span>
-                </div>
-                <p className="promotionTitle">{step.promotionTitle}</p>
-                {step.digestionChapter && <span>Digestion milestone · Chapter {step.digestionChapter}</span>}
+          {milestones.map((step, index) => {
+            const stepEvents = sequenceEvents.filter((event) => event.sequence === step.sequence);
+            const digestionEvent = stepEvents.find((event) => event.kind === 'digestion');
 
-                <div className="milestoneTags">
-                  {step.identityContext.map((identity) => <span key={identity}>{identity}</span>)}
-                </div>
+            return (
+              <article key={step.sequence} className="progressionStep milestoneStep">
+                <div className="sequenceBadge">S{step.sequence}</div>
+                <div className="progressionBody">
+                  <div className="milestoneTitleRow">
+                    <h3>{step.name}</h3>
+                    <span className="chapterPill">Ch {step.promotionChapter}</span>
+                  </div>
+                  <p className="promotionTitle">{step.promotionTitle}</p>
+                  {digestionEvent && <span>Verified digestion milestone · Chapter {digestionEvent.chapter}</span>}
 
-                <div className="sequenceDetail formulaBlock">
-                  <strong>Potion formula</strong>
-                  <div className="formulaGrid">
-                    <div>
-                      <small>MAIN INGREDIENTS</small>
-                      <ul>{step.formula.mainIngredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</ul>
+                  <div className="milestoneTags">
+                    {step.identityContext.map((identity) => <span key={identity}>{identity}</span>)}
+                  </div>
+
+                  <div className="sequenceDetail formulaBlock">
+                    <strong>Potion formula</strong>
+                    <div className="formulaGrid">
+                      <div>
+                        <small>MAIN INGREDIENTS</small>
+                        <ul>{step.formula.mainIngredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</ul>
+                      </div>
+                      <div>
+                        <small>SUPPLEMENTARY</small>
+                        <ul>{step.formula.supplementaryIngredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</ul>
+                      </div>
                     </div>
-                    <div>
-                      <small>SUPPLEMENTARY</small>
-                      <ul>{step.formula.supplementaryIngredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</ul>
+                  </div>
+
+                  {'ritual' in step && step.ritual && (
+                    <div className="sequenceDetail ritualBlock">
+                      <strong>Advancement ritual</strong>
+                      <p>{step.ritual}</p>
+                    </div>
+                  )}
+
+                  <div className="sequenceDetailGrid">
+                    <div className="sequenceDetail">
+                      <strong>Acting principles</strong>
+                      {step.actingPrinciples.length > 0 ? (
+                        <ul>{step.actingPrinciples.map((principle) => <li key={principle}>{principle}</li>)}</ul>
+                      ) : (
+                        <p className="pendingDetail">No consolidated acting-rule list is asserted from the EPUB yet.</p>
+                      )}
+                      {'actingEvidence' in step && step.actingEvidence && <p className="evidenceNote">{step.actingEvidence}</p>}
+                      {'digestionMechanism' in step && step.digestionMechanism && <p className="evidenceNote">{step.digestionMechanism}</p>}
+                    </div>
+
+                    <div className="sequenceDetail">
+                      <strong>Core abilities</strong>
+                      {step.abilities.length > 0 ? (
+                        <ul>{step.abilities.map((ability) => <li key={ability}>{ability}</li>)}</ul>
+                      ) : (
+                        <p className="pendingDetail">Pending curated source extraction.</p>
+                      )}
                     </div>
                   </div>
-                </div>
 
-                {'ritual' in step && step.ritual && (
-                  <div className="sequenceDetail ritualBlock">
-                    <strong>Advancement ritual</strong>
-                    <p>{step.ritual}</p>
-                  </div>
-                )}
-
-                <div className="sequenceDetailGrid">
                   <div className="sequenceDetail">
-                    <strong>Acting principles</strong>
-                    {step.actingPrinciples.length > 0 ? (
-                      <ul>{step.actingPrinciples.map((principle) => <li key={principle}>{principle}</li>)}</ul>
-                    ) : (
-                      <p className="pendingDetail">No consolidated acting-rule list is asserted from the EPUB yet.</p>
-                    )}
-                    {'actingEvidence' in step && step.actingEvidence && <p className="evidenceNote">{step.actingEvidence}</p>}
-                    {'digestionMechanism' in step && step.digestionMechanism && <p className="evidenceNote">{step.digestionMechanism}</p>}
+                    <strong>Chapter-by-chapter progression</strong>
+                    <div className="chapterMilestoneFeed">
+                      {stepEvents.map((event) => (
+                        <div className="chapterMilestone" key={`${event.sequence}-${event.chapter}-${event.kind}`}>
+                          <div className="chapterMilestoneMeta">
+                            <span className="chapterPill">Ch {event.chapter}</span>
+                            <span className={`eventKind event-${event.kind}`}>{event.kind.replaceAll('-', ' ')}</span>
+                          </div>
+                          <div>
+                            <h4>{event.title}</h4>
+                            <p>{event.summary}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="sequenceDetail">
-                    <strong>Core abilities</strong>
-                    {step.abilities.length > 0 ? (
-                      <ul>{step.abilities.map((ability) => <li key={ability}>{ability}</li>)}</ul>
-                    ) : (
-                      <p className="pendingDetail">Pending curated source extraction.</p>
-                    )}
+                    <strong>Milestone summary</strong>
+                    <ul className="milestoneList">
+                      {step.milestones.map((milestone) => <li key={milestone}>{milestone}</li>)}
+                    </ul>
                   </div>
-                </div>
 
-                <div className="sequenceDetail">
-                  <strong>Milestones</strong>
-                  <ul className="milestoneList">
-                    {step.milestones.map((milestone) => <li key={milestone}>{milestone}</li>)}
-                  </ul>
+                  <small>{step.source.status} · {step.source.note}</small>
                 </div>
-
-                <small>{step.source.status} · {step.source.note}</small>
-              </div>
-              {index < milestones.length - 1 && <div className="progressArrow">↓</div>}
-            </article>
-          ))}
+                {index < milestones.length - 1 && <div className="progressArrow">↓</div>}
+              </article>
+            );
+          })}
         </div>
       </section>
 
