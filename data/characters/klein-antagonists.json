@@ -34,5 +34,26 @@
     ],
     "spoilerChapter": 945,
     "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-zaratul",
+    "source": "klein-moretti",
+    "target": "zaratul",
+    "displayName": "Zaratul",
+    "group": "antagonists",
+    "types": ["same-pathway-rival", "secret-order-leader", "temporary-ally", "attendant-of-mysteries", "enemy"],
+    "chapterStart": 838,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 838, "chapterEnd": 992, "state": "direct-foggy-town-contact-through-gehrman-sparrow-with-mutual-wariness"},
+      {"chapterStart": 993, "chapterEnd": 1084, "state": "zaratul-leaves-his-concealed-prison-and-becomes-an-unlocated-convergence-threat"},
+      {"chapterStart": 1085, "chapterEnd": 1163, "state": "klein-confirms-zaratul-is-in-backlund-and-treats-him-as-an-active-same-pathway-rival"},
+      {"chapterStart": 1164, "chapterEnd": 1164, "state": "temporary-tactical-ally-against-amon-through-zaratuls-historical-projection"},
+      {"chapterStart": 1165, "chapterEnd": 1343, "state": "strategic-rivals-for-seer-pathway-and-sefirah-castle-survival"},
+      {"chapterStart": 1344, "chapterEnd": 1351, "state": "zaratul-openly-attacks-klein-in-utopia-and-cooperates-with-adam-and-suah"},
+      {"chapterStart": 1352, "chapterEnd": null, "state": "klein-defeats-zaratuls-main-body-and-takes-his-sequence-1-characteristic-but-later-doubts-complete-death"}
+    ],
+    "spoilerChapter": 838,
+    "sourceStatus": "epub-anchored"
   }
 ]
