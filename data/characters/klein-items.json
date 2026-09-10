@@ -1,0 +1,8 @@
+[
+  {"id":"azik-copper-whistle","name":"Azik's Copper Whistle","category":"mystical-item","firstAppearanceChapter":170,"acquiredChapter":170,"owner":"klein-moretti","pathway":"Death","status":"owned","spoilerChapter":170,"sourceStatus":"epub+web-crosschecked"},
+  {"id":"black-emperor-card","name":"Black Emperor Card","category":"card-of-blasphemy","firstAppearanceChapter":323,"acquiredChapter":323,"owner":"klein-moretti","pathway":"Black Emperor","status":"owned","spoilerChapter":323,"sourceStatus":"web-crosschecked"},
+  {"id":"creeping-hunger","name":"Creeping Hunger","category":"sealed-artifact","firstAppearanceChapter":146,"acquiredChapter":480,"owner":"klein-moretti","pathway":"Hanged Man","status":"later-lost","spoilerChapter":480,"sourceStatus":"web-crosschecked"},
+  {"id":"sea-god-scepter","name":"Sea God Scepter","category":"sealed-artifact","firstAppearanceChapter":548,"acquiredChapter":549,"owner":"klein-moretti","pathway":"Tyrant","status":"later-given-to-alger","spoilerChapter":549,"sourceStatus":"web-crosschecked"},
+  {"id":"death-knell","name":"Death Knell","category":"sealed-artifact","firstAppearanceChapter":707,"acquiredChapter":707,"owner":"klein-moretti","pathway":"Red Priest","status":"later-lost","spoilerChapter":707,"sourceStatus":"web-crosschecked"},
+  {"id":"arrodes","name":"Arrodes","category":"mystical-item-character-hybrid","firstAppearanceChapter":null,"acquiredChapter":null,"owner":"klein-moretti","pathway":null,"status":"recurring-ally","spoilerChapter":1,"sourceStatus":"needs-epub-anchor"}
+]
