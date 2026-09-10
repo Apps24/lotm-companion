@@ -73,5 +73,24 @@
     ],
     "spoilerChapter": 1024,
     "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-trissy",
+    "source": "klein-moretti",
+    "target": "trissy",
+    "displayName": "Trissy / Trissy Cheek",
+    "group": "antagonists",
+    "types": ["former-enemy", "demoness", "investigation-target", "uneasy-informant", "temporary-ally"],
+    "chapterStart": 125,
+    "chapterEnd": 1148,
+    "knowledge": [
+      {"chapterStart": 125, "chapterEnd": 469, "state": "klein-identifies-instigator-tris-as-trissy-and-treats-her-as-a-dangerous-demoness-sect-fugitive"},
+      {"chapterStart": 470, "chapterEnd": 977, "state": "trissy-knows-sherlock-moriarty-as-a-beyonder-detective-while-klein-learns-her-trissy-cheek-and-primordial-demoness-connection"},
+      {"chapterStart": 978, "chapterEnd": 1042, "state": "trissy-recognizes-gehrman-sparrow-and-they-enter-an-uneasy-mutually-suspicious-cooperation"},
+      {"chapterStart": 1043, "chapterEnd": 1147, "state": "trissy-provides-royal-conspiracy-intelligence-and-cooperates-with-gehrman-against-george-iii"},
+      {"chapterStart": 1148, "chapterEnd": 1148, "state": "trissy-accepts-primordial-demoness-power-for-a-self-destructive-assault-that-helps-break-george-iiis-apotheosis"}
+    ],
+    "spoilerChapter": 125,
+    "sourceStatus": "epub-anchored"
   }
 ]
