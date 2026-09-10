@@ -1,14 +1,18 @@
 import identities from '@/data/characters/klein-identities.json';
 import identityEvents from '@/data/characters/klein-identity-events.json';
+import type { IdentityEvent, KleinIdentity } from '@/lib/types/knowledge-graph';
+
+const typedIdentities = identities as KleinIdentity[];
+const typedIdentityEvents = identityEvents as IdentityEvent[];
 
 export default function IdentitySection({ spoilerChapter }: { spoilerChapter: number }) {
-  const visibleIdentities = identities.filter((identity) => {
-    const revealChapter = 'phaseStartChapter' in identity && identity.phaseStartChapter
+  const visibleIdentities = typedIdentities.filter((identity) => {
+    const revealChapter = identity.phaseStartChapter
       ? Math.min(identity.phaseStartChapter, identity.chapterStart)
       : identity.chapterStart;
     return revealChapter <= spoilerChapter;
   });
-  const sortedEvents = [...identityEvents]
+  const sortedEvents = [...typedIdentityEvents]
     .filter((event) => event.chapter <= spoilerChapter)
     .sort((a, b) => a.chapter - b.chapter);
 
@@ -26,7 +30,7 @@ export default function IdentitySection({ spoilerChapter }: { spoilerChapter: nu
             <small>{identity.kind}</small>
             <h3>{identity.name}</h3>
             <p>{identity.role}</p>
-            {'phaseStartChapter' in identity && identity.phaseStartChapter && identity.phaseStartChapter <= spoilerChapter && identity.phaseStartChapter < identity.chapterStart && (
+            {identity.phaseStartChapter && identity.phaseStartChapter <= spoilerChapter && identity.phaseStartChapter < identity.chapterStart && (
               <span>Persona phase begins · Ch {identity.phaseStartChapter}</span>
             )}
             {identity.chapterStart <= spoilerChapter && <span>First anchored use · Ch {identity.chapterStart}</span>}
@@ -34,7 +38,7 @@ export default function IdentitySection({ spoilerChapter }: { spoilerChapter: nu
               ? <span>Primary era · Ch {identity.chapterStart}–{identity.chapterEnd}</span>
               : <span>Active by Chapter {spoilerChapter}</span>}
             {identity.sequenceAtStart !== null && identity.chapterStart <= spoilerChapter && <em>Sequence {identity.sequenceAtStart} at first anchored use</em>}
-            {'sourceNote' in identity && identity.sourceNote && identity.chapterStart <= spoilerChapter && <small>{identity.sourceStatus}</small>}
+            {identity.sourceNote && identity.chapterStart <= spoilerChapter && <small>{identity.sourceStatus}</small>}
           </article>
         ))}
       </div>
@@ -43,7 +47,7 @@ export default function IdentitySection({ spoilerChapter }: { spoilerChapter: nu
         <strong>Identity transition timeline</strong>
         <div className="chapterMilestoneFeed">
           {sortedEvents.map((event) => {
-            const identity = identities.find((item) => item.id === event.identityId);
+            const identity = typedIdentities.find((item) => item.id === event.identityId);
             return (
               <div className="chapterMilestone" key={`${event.identityId}-${event.chapter}-${event.kind}`}>
                 <div className="chapterMilestoneMeta">
