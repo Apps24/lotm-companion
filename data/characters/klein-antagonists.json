@@ -1,0 +1,21 @@
+[
+  {
+    "id": "klein-ince-zangwill",
+    "source": "klein-moretti",
+    "target": "ince-zangwill",
+    "displayName": "Ince Zangwill",
+    "group": "antagonists",
+    "types": ["enemy", "tinen-conspirator", "murderer", "revenge-target", "0-08-wielder"],
+    "chapterStart": 19,
+    "chapterEnd": 945,
+    "knowledge": [
+      {"chapterStart": 19, "chapterEnd": 209, "state": "klein-knows-ince-as-wanted-former-archbishop-and-0-08-wielder"},
+      {"chapterStart": 210, "chapterEnd": 212, "state": "ince-knows-klein-moretti-as-a-disruptive-tingen-nighthawk-and-kills-him"},
+      {"chapterStart": 213, "chapterEnd": 939, "state": "klein-identifies-ince-as-his-murderer-and-primary-revenge-target-while-his-survival-remains-hidden"},
+      {"chapterStart": 940, "chapterEnd": 944, "state": "klein-and-allies-direct-a-revenge-trap-around-ince-and-0-08"},
+      {"chapterStart": 945, "chapterEnd": 945, "state": "ince-directly-recognizes-that-klein-moretti-is-alive-during-the-final-confrontation"}
+    ],
+    "spoilerChapter": 19,
+    "sourceStatus": "epub-anchored"
+  }
+]
