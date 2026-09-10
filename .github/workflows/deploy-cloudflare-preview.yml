@@ -24,14 +24,19 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Validate Klein canonical data
+      - name: Validate canonical data
         run: npm run validate:data
+
+      - name: Release QA smoke checks
+        run: npm run qa:release
 
       - name: Build static site
         run: npm run build
 
       - name: Verify export
-        run: test -f out/index.html
+        run: |
+          test -f out/index.html
+          test -f out/read/index.html
 
       - name: Deploy branch preview to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
