@@ -25,7 +25,7 @@ Curated reader speakers: Athena, Pluto, Orpheus, Pandora, Vesta, Minerva, Zeus a
 
 `NEXT_PUBLIC_TTS_WORKER_URL` must point at the deployed narrator Worker. Browser Natural remains the fallback when the Worker is unavailable.
 
-The existing Cloudflare Pages token can deploy Pages but currently cannot publish Worker scripts. A token used by the narrator deployment workflow needs Workers Scripts edit/deploy permission plus the permissions required for Workers AI.
+The existing Cloudflare Pages token can deploy Pages but currently cannot publish Worker scripts. A token used by the narrator deployment workflow needs Workers Scripts edit/deploy permission plus the permissions required for Workers AI. This is tracked separately from the core reader release so it does not block the local/browser narration experience.
 
 ## Optional Supabase sync
 
@@ -36,7 +36,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
 ```
 
-Apply `supabase/reader-sync.sql` to the dedicated project. It creates RLS-protected tables:
+Apply `supabase/reader-sync.sql` to a dedicated project. It creates RLS-protected tables:
 
 - `reader_profiles`
 - `reader_progress`
@@ -51,6 +51,6 @@ The UI supports email OTP sign-in, pushing the current browser state to Supabase
 
 The sync client never sends rendered chapter HTML, EPUB prose, EPUB files or embedded EPUB images.
 
-## Release hold
+## Release status
 
-Phase 8 stays on its branch preview until natural narration is accepted, optional sync is connected/tested, the supplied EPUB passes runtime/mobile QA and the final Cloudflare production gates are green.
+The core Phase 8 reader is production-ready when branch CI and Cloudflare preview are green. Aura-2 deployment and connecting a dedicated Supabase project are optional infrastructure follow-ups; Browser Natural narration and the local EPUB reader remain fully functional without them.
