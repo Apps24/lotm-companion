@@ -1,0 +1,84 @@
+[
+  {
+    "id":"tingen",
+    "name":"Tingen",
+    "kind":"home-and-nighthawk-era",
+    "ranges":[
+      {"chapterStart":1,"chapterEnd":213,"role":"Primary home, Moretti family life, Blackthorn Security Company, Nighthawk training, first four Seer-pathway stages of growth and the Tingen climax."},
+      {"chapterStart":1366,"chapterEnd":1366,"role":"Late-story return to old places as Klein reinforces humanity and self-awareness."}
+    ],
+    "spoilerChapter":1,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":1,"chapterTitle":"Crimson","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"backlund",
+    "name":"Backlund",
+    "kind":"metropolis-and-identity-hub",
+    "ranges":[
+      {"chapterStart":214,"chapterEnd":482,"role":"Sherlock Moriarty detective era, early Tarot expansion, Lanevus revenge, Rosago, Sharron and Maric, and Magician-to-Faceless development."},
+      {"chapterStart":732,"chapterEnd":1150,"role":"Dwayne Dantès era, high-society infiltration, Bizarro Sorcerer development, Great Smog investigation and George III conspiracy."},
+      {"chapterStart":1271,"chapterEnd":1272,"role":"Post-war return after the Seven Lights revelation, used to reconnect with ordinary human society."}
+    ],
+    "spoilerChapter":214,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":214,"chapterTitle":"A New Beginning","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"sonia-sea-rorsted",
+    "name":"Sonia Sea & Rorsted Archipelago",
+    "kind":"gehrman-sparrow-adventure-region",
+    "ranges":[
+      {"chapterStart":483,"chapterEnd":732,"role":"Primary Gehrman Sparrow adventurer era, pirate hunting, Sea God inheritance, Creeping Hunger use, Marionettist advancement and extensive real-world acting."},
+      {"chapterStart":548,"chapterEnd":1390,"role":"Rorsted becomes the center of Sea God believers and one of Klein's long-term anchor communities."}
+    ],
+    "spoilerChapter":483,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":483,"chapterTitle":"New Identity","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"sefirah-castle",
+    "name":"Sefirah Castle / the world above the gray fog",
+    "kind":"core-mystical-domain",
+    "ranges":[
+      {"chapterStart":1,"chapterEnd":1394,"role":"Klein's persistent gray-fog domain: Tarot gatherings, divination enhancement, item storage, prayer responses, high-sequence authority and the final contest for the Lord of the Mysteries position."},
+      {"chapterStart":1127,"chapterEnd":1394,"role":"The domain is explicitly understood and named as Sefirah Castle as Klein's knowledge and control deepen."}
+    ],
+    "spoilerChapter":1,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":1127,"chapterTitle":"Sefirah Castle","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"forsaken-land-of-the-gods",
+    "name":"Forsaken Land of the Gods",
+    "kind":"angel-and-history-progression-region",
+    "ranges":[
+      {"chapterStart":1151,"chapterEnd":1268,"role":"Amon captivity and escape, Chernobyl/Earth revelation, City of Silver operations, Dark Angel/Sasrir history, and the road to Miracle Invoker."}
+    ],
+    "spoilerChapter":1151,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":1151,"chapterTitle":"The Fool's Gambit","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"utopia",
+    "name":"Utopia",
+    "kind":"attendant-of-mysteries-ritual-town",
+    "ranges":[
+      {"chapterStart":1328,"chapterEnd":1345,"role":"Klein's marionette town and Attendant of Mysteries ritual project; later the site of Zaratul's ambush and Adam's hidden capture arrangement."}
+    ],
+    "spoilerChapter":1328,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":1328,"chapterTitle":"The Preparations Needed","sourceType":"epub","verificationStatus":"epub-anchored"}
+  },
+  {
+    "id":"hornacis-main-peak",
+    "name":"Hornacis Mountain Range · Main Peak",
+    "kind":"fool-uniqueness-and-apotheosis-site",
+    "ranges":[
+      {"chapterStart":1375,"chapterEnd":1380,"role":"Klein begins accommodation of The Fool's Uniqueness through the Antigonus plan and completes the Sequence 0 apotheosis conflict."}
+    ],
+    "spoilerChapter":1375,
+    "sourceStatus":"epub-anchored",
+    "sourceLocator":{"chapter":1375,"chapterTitle":"Beginning the Accommodation","sourceType":"epub","verificationStatus":"epub-anchored"}
+  }
+]
