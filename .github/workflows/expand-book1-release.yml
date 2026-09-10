@@ -1,0 +1,23 @@
+name: Expand Book 1 Release
+on:
+  push:
+    branches: [release/book1-bootstrap]
+    paths:
+      - '_bootstrap/**'
+      - '.github/workflows/expand-book1-release.yml'
+permissions:
+  contents: write
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify staged payload parts
+        run: |
+          test -f _bootstrap/payload.part.00
+          test -f _bootstrap/payload.part.09
+          test "$(find _bootstrap -name 'payload.part.*' | wc -l)" -eq 10
+      - name: Expand and push final integration tree
+        run: bash _bootstrap/expand.sh
