@@ -3,7 +3,8 @@ on:
   push:
     branches: [release/book1-bootstrap]
     paths:
-      - '_bootstrap/**'
+      - '_bootstrap/release.part.*'
+      - '_bootstrap/expand.sh'
       - '.github/workflows/expand-book1-release.yml'
 permissions:
   contents: write
@@ -14,10 +15,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Verify staged payload parts
+      - name: Verify archive parts
         run: |
-          test -f _bootstrap/payload.part.00
-          test -f _bootstrap/payload.part.09
-          test "$(find _bootstrap -name 'payload.part.*' | wc -l)" -eq 10
-      - name: Expand and push final integration tree
+          test -f _bootstrap/release.part.00
+          test -f _bootstrap/release.part.09
+          test "$(find _bootstrap -maxdepth 1 -name 'release.part.*' | wc -l | tr -d ' ')" = "10"
+      - name: Expand verified Phase 3-7 tree
         run: bash _bootstrap/expand.sh
