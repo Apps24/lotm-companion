@@ -92,5 +92,25 @@
     ],
     "spoilerChapter": 125,
     "sourceStatus": "epub-anchored"
+  },
+  {
+    "id": "klein-suah",
+    "source": "klein-moretti",
+    "target": "suah",
+    "displayName": "Abomination Suah",
+    "group": "antagonists",
+    "types": ["enemy", "rose-school-leader", "sequence-1-abomination", "mother-tree-of-desire-faction", "reinette-enemy"],
+    "chapterStart": 729,
+    "chapterEnd": null,
+    "knowledge": [
+      {"chapterStart": 729, "chapterEnd": 734, "state": "suah-remotely-intervenes-against-gehrman-sparrow-before-klein-knows-the-attackers-identity"},
+      {"chapterStart": 735, "chapterEnd": 1146, "state": "klein-identifies-suah-as-rose-school-of-thought-leader-and-an-angel-level-pursuer-connected-to-reinette"},
+      {"chapterStart": 1147, "chapterEnd": 1233, "state": "suah-directly-interferes-with-kleins-george-iii-operation-and-remains-a-known-sequence-1-enemy"},
+      {"chapterStart": 1234, "chapterEnd": 1235, "state": "suah-descends-through-the-rose-school-trap-and-directly-battles-klein-and-reinette"},
+      {"chapterStart": 1236, "chapterEnd": 1343, "state": "suah-remains-an-active-high-level-rose-school-threat-after-the-faoltec-operation"},
+      {"chapterStart": 1344, "chapterEnd": null, "state": "zaratul-uses-a-historical-projection-of-suah-in-the-utopia-ambush-while-the-real-suah-remains-unresolved"}
+    ],
+    "spoilerChapter": 729,
+    "sourceStatus": "epub-anchored"
   }
 ]
