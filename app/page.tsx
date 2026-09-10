@@ -1,71 +1,25 @@
-import Link from 'next/link';
-import summary from '@/data/generated/epub-summary.json';
-import volumes from '@/data/generated/volumes.json';
+import Link from "next/link";
+import summary from "@/data/generated/epub-summary.json";
+import volumes from "@/data/generated/volumes.json";
+import SpoilerControl from "./components/SpoilerControl";
 
-const phases = [
-  ['Phase 0', 'Foundation', 'Repository, architecture, source audit, CI/deployment', 'done'],
-  ['Phase 1', 'EPUB ingestion', 'Chapter index, volumes, existing artwork catalogue', 'active'],
-  ['Phase 2', 'Klein graph', 'Identities, sequences, items, fights, relationships', 'next'],
-  ['Phase 3', 'Tarot Club', 'All members, real-world arcs, potion progressions', 'next'],
-  ['Phase 4', 'World graph', 'Non-Tarot cast, organizations, locations, pathways', 'next'],
-  ['Phase 5', 'Reader + spoilers', 'Chapter reader, spoiler slider, search, timeline', 'next'],
-  ['Phase 6', 'Visual layer', 'EPUB art, fanart attribution, curated AI scenes', 'next'],
-  ['Phase 7', 'Polish', 'Validation, performance, accessibility, final deployment', 'next'],
+const destinations = [
+  ["/chapters","Chapter Companion","All 1,430 numbered chapters, title search, entity signals and chapter detail pages.","1430"],
+  ["/chapters/2","Chapter 2 · Situation","Curated derived notes for the requested Chapter 2: situation, characters, worldbuilding and mysteries.","CH 2"],
+  ["/klein","Klein’s Journey","Sequence 9→0, aliases, items, fights, relationships, locations and organizations.","S9→S0"],
+  ["/tarot","Tarot Club","All seats, joining chronology, pathway progression and real-world interaction milestones.","10 SEATS"],
+  ["/world","World Graph","Important characters, 22 pathways, organizations, locations, mystical items and major lore.","22 PATHS"],
+  ["/timeline","Timeline / Search","Spoiler-filtered event spine and fast Book 1 event search.","BOOK 1"],
+  ["/visuals","Visual Layer","328 EPUB-image metadata records plus project-generated scene art and provenance rules.","328+"],
 ] as const;
 
 export default function Home() {
-  return (
-    <main>
-      <section className="hero">
-        <p className="eyebrow">PHASE 1 · EPUB INGESTION</p>
-        <h1>Lord of the Mysteries<br />Interactive Companion</h1>
-        <p className="lead">A spoiler-aware visual knowledge graph built around chapters, Klein&apos;s progression, the Tarot Club, fights, items, identities, locations and artwork.</p>
-        <div className="status"><span /> EPUB metadata parsed successfully</div>
-        <div className="actions">
-          <Link href="/chapters" className="primaryButton">Browse chapter index</Link>
-          <a href="#volumes" className="secondaryButton">View volumes</a>
-        </div>
-      </section>
-
-      <section className="stats" aria-label="EPUB statistics">
-        <div><strong>{summary.chapterCount}</strong><span>chapters</span></div>
-        <div><strong>{summary.volumeCount}</strong><span>volumes</span></div>
-        <div><strong>{summary.imageCount}</strong><span>embedded images</span></div>
-        <div><strong>{summary.navigationEntryCount}</strong><span>navigation entries</span></div>
-      </section>
-
-      <section id="volumes" className="sectionBlock">
-        <div className="sectionHeading">
-          <p className="eyebrow">SOURCE STRUCTURE</p>
-          <h2>Volumes detected from the EPUB</h2>
-        </div>
-        <div className="volumeGrid">
-          {volumes.map((volume) => (
-            <article key={volume.number}>
-              <small>VOLUME {volume.number}</small>
-              <h3>{volume.name}</h3>
-              <p>Chapters {volume.chapterStart}–{volume.chapterEnd}</p>
-              <span>{volume.chapterCount} chapter entries</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="grid">
-        {phases.map(([id, title, desc, state]) => (
-          <article key={id} className={state}>
-            <small>{id}</small>
-            <h2>{title}</h2>
-            <p>{desc}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="principles">
-        <h2>Core data rule</h2>
-        <p><strong>Chapter is the central foreign key.</strong> Every character state, relationship, potion advancement, fight, item ownership, reveal and artwork record must resolve to a chapter or chapter range.</p>
-        <p className="privacyNote">The public repository stores metadata only. Novel prose remains in the user-supplied EPUB and is not committed.</p>
-      </section>
-    </main>
-  );
+  return <main className="finalMain">
+    <section className="finalHero"><p className="eyebrow">BOOK 1 · PHASES 0–7 COMPANION</p><h1>Lord of the Mysteries<br/>Interactive Companion</h1><p className="lead">Explore the novel as a chapter-linked knowledge graph: Klein’s progression, the Tarot Club, pathways, people, battles, items, lore, locations and artwork metadata—all protected by one spoiler chapter.</p><div className="heroButtons"><Link className="primaryButton" href="/chapters">Open chapter companion</Link><Link className="secondaryButton" href="/klein">Explore Klein’s journey</Link></div></section>
+    <SpoilerControl />
+    <section className="stats finalStats"><div><strong>{summary.chapterCount}</strong><span>numbered chapters</span></div><div><strong>{summary.volumeCount}</strong><span>volumes</span></div><div><strong>{summary.imageCount}</strong><span>EPUB images indexed</span></div><div><strong>22</strong><span>standard pathways</span></div></section>
+    <section className="sectionBlock"><div className="sectionHeading"><p className="eyebrow">EXPLORE</p><h2>Book 1 companion sections</h2></div><div className="destinationGrid">{destinations.map(([href,title,desc,badge])=><Link href={href} className="destinationCard" key={href}><span>{badge}</span><h3>{title}</h3><p>{desc}</p><b>Open →</b></Link>)}</div></section>
+    <section className="sectionBlock"><div className="sectionHeading"><p className="eyebrow">SOURCE STRUCTURE</p><h2>Eight volumes, one chapter key</h2></div><div className="volumeGrid">{volumes.map(v=><article key={v.number}><small>VOLUME {v.number}</small><h3>{v.name}</h3><p>Chapters {v.chapterStart}–{v.chapterEnd}</p><Link href={`/chapters?volume=${v.number}`}>Browse volume →</Link></article>)}</div></section>
+    <section className="principles"><h2>How the companion stays safe and useful</h2><p><strong>Chapter is the central foreign key.</strong> Every reveal, progression, relationship, item, location, organization and visual record resolves to a chapter or range.</p><p className="privacyNote">The public site stores titles, metadata and derived summaries—not chapter prose. EPUB artwork is catalogued as metadata unless it is project-generated and safe to publish.</p></section>
+  </main>;
 }
