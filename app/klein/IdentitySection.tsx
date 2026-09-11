@@ -7,9 +7,7 @@ const typedIdentityEvents = identityEvents as IdentityEvent[];
 
 export default function IdentitySection({ spoilerChapter }: { spoilerChapter: number }) {
   const visibleIdentities = typedIdentities.filter((identity) => {
-    const revealChapter = identity.phaseStartChapter
-      ? Math.min(identity.phaseStartChapter, identity.chapterStart)
-      : identity.chapterStart;
+    const revealChapter = Math.max(identity.spoilerChapter ?? identity.chapterStart, identity.chapterStart);
     return revealChapter <= spoilerChapter;
   });
   const sortedEvents = [...typedIdentityEvents]
@@ -58,7 +56,7 @@ export default function IdentitySection({ spoilerChapter }: { spoilerChapter: nu
                   <h4>{event.title}</h4>
                   <p>{event.summary}</p>
                   <div className="milestoneTags">
-                    <span>{identity?.name ?? event.identityId}</span>
+                    {identity && Math.max(identity.chapterStart, identity.spoilerChapter ?? identity.chapterStart) <= spoilerChapter && <span>{identity.name}</span>}
                     {event.sequence !== null && <span>Sequence {event.sequence}</span>}
                     <span>{event.sourceStatus}</span>
                   </div>

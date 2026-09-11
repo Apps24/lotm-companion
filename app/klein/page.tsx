@@ -12,6 +12,7 @@ import items from '@/data/characters/klein-items.json';
 import fights from '@/data/characters/klein-fights.json';
 import locations from '@/data/characters/klein-locations.json';
 import organizations from '@/data/characters/klein-organizations.json';
+import identities from '@/data/characters/klein-identities.json';
 
 const MAX_CHAPTER = 1430;
 const STORAGE_KEY = 'lotmSpoilerChapter';
@@ -127,7 +128,7 @@ export default function KleinPage() {
                     {digestionEvent && <span>Verified digestion milestone · Chapter {digestionEvent.chapter}</span>}
 
                     <div className="milestoneTags">
-                      {step.identityContext.map((identity) => <span key={identity}>{identity}</span>)}
+                      {step.identityContext.filter((name) => identities.some((identity) => identity.name === name && Math.max(identity.chapterStart, identity.spoilerChapter) <= spoilerChapter)).map((identity) => <span key={identity}>{identity}</span>)}
                     </div>
 
                     <div className="sequenceDetail formulaBlock">
@@ -148,7 +149,8 @@ export default function KleinPage() {
                       <div className="sequenceDetail ritualBlock"><strong>Advancement ritual</strong><p>{step.ritual}</p></div>
                     )}
 
-                    <div className="sequenceDetailGrid">
+                    {/* Aggregated summaries lack per-detail reveal anchors. Keep them at the full-book gate. */}
+                    {spoilerChapter === MAX_CHAPTER ? <div className="sequenceDetailGrid">
                       <div className="sequenceDetail">
                         <strong>Acting principles</strong>
                         {step.actingPrinciples.length > 0
@@ -161,7 +163,7 @@ export default function KleinPage() {
                         <strong>Core abilities</strong>
                         <ul>{step.abilities.map((ability) => <li key={ability}>{ability}</li>)}</ul>
                       </div>
-                    </div>
+                    </div> : <p className="pendingDetail">Full acting and ability summaries are available with all Book 1 data. Chapter-anchored details appear below as they are revealed.</p>}
 
                     <div className="sequenceDetail">
                       <strong>Chapter-by-chapter progression</strong>

@@ -20,12 +20,12 @@ export default function RelationshipSection({ spoilerChapter }: { spoilerChapter
       <div className="sectionHeading">
         <p className="eyebrow">3 · RELATIONSHIPS</p>
         <h2>Who knows which version of Klein?</h2>
-        <p className="lead">The graph is frozen at Chapter {spoilerChapter}. Knowing both Gehrman Sparrow and The Fool does not automatically mean a character knows they are the same person; explicit identity links are recorded separately.</p>
+        <p className="lead">The graph is frozen at Chapter {spoilerChapter}. Recognizing two personas does not automatically mean a character knows they are the same person; explicit identity links are recorded separately.</p>
       </div>
 
       <div className="sequenceDetail relationshipLegend">
         <strong>Knowledge-state rule</strong>
-        <p><b>Alias known</b> means the character has encountered or recognizes that persona. <b>Same-person link</b> is only used when the EPUB supports that the character connects two or more of Klein's identities. Cosmic rivals also distinguish external enemies from the Celestial Worthy's internal resurrection pressure.</p>
+        <p><b>Alias known</b> means the character has encountered or recognizes that persona. <b>Same-person link</b> is only used when the EPUB supports that the character connects two or more of Klein's identities.</p>
       </div>
 
       <div className="relationshipGroups">
