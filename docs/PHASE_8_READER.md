@@ -25,7 +25,7 @@ Curated reader speakers: Athena, Pluto, Orpheus, Pandora, Vesta, Minerva, Zeus a
 
 `NEXT_PUBLIC_TTS_WORKER_URL` must point at the deployed narrator Worker. Browser Natural remains the fallback when the Worker is unavailable.
 
-The existing Cloudflare Pages token can deploy Pages but currently cannot publish Worker scripts. A token used by the narrator deployment workflow needs Workers Scripts edit/deploy permission plus the permissions required for Workers AI. This is tracked in #34 and does not block the local/browser narration experience.
+The narrator Worker is deployed at `https://lotm-companion-tts.apurvpatole2.workers.dev`. Production and preview workflows supply this public URL at build time. The updated deployment token successfully published the Worker on 2026-09-14; a short Athena request returned a valid MP3 with the production origin allowed. The voice-preview button uses a short sample through the same AI playback path as chapter narration.
 
 ## Optional Supabase sync
 
