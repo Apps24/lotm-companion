@@ -1,4 +1,6 @@
 import fs from "node:fs"; import path from "node:path";
+import { execFileSync } from 'node:child_process';
+execFileSync(process.execPath, ['scripts/test-audio.cjs'], { stdio: 'inherit' });
 const root=process.cwd(), errors=[]; const ok=(c,m)=>{if(!c)errors.push(m)}; const text=p=>fs.readFileSync(path.join(root,p),"utf8");
 const requiredRoutes=["app/page.tsx","app/read/page.tsx","app/chapters/page.tsx","app/chapters/[chapter]/page.tsx","app/klein/page.tsx","app/tarot/page.tsx","app/world/page.tsx","app/timeline/page.tsx","app/visuals/page.tsx"];
 requiredRoutes.forEach(p=>ok(fs.existsSync(path.join(root,p)),`missing route ${p}`));

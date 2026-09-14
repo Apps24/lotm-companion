@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AudioBufferQueue, audioError, requestAudio, speechChunks, joinPassages } from '@/lib/reader/audio';
 
 type Delivery = 'storyteller' | 'calm' | 'dramatic';
 type Mode = 'browser' | 'ai';
@@ -51,10 +52,10 @@ function collect(){
   const result:Unit[]=[];
   nodes.forEach(node=>{
     const blockIndex=Number(node.dataset.readerBlock ?? result.length);
-    const parts=sentences(node.textContent ?? '');
+    const parts=speechChunks(node.textContent ?? '');
     parts.forEach((text,index)=>result.push({text,blockIndex,paragraphEnd:index===parts.length-1}));
   });
-  return result;
+  return joinPassages(result);
 }
 
 function pauseFor(unit:Unit,delivery:Delivery){
@@ -86,6 +87,8 @@ export default function NaturalNarratorV2(){
   const session=useRef(0);
   const timer=useRef<number|null>(null);
   const audio=useRef<HTMLAudioElement|null>(null);
+  const queue=useRef<AudioBufferQueue|null>(null);
+  const audioUrl=useRef<string|null>(null);
 
   useEffect(()=>setPrefs(readPrefs()),[]);
   useEffect(()=>{window.localStorage.setItem(KEY,JSON.stringify(prefs))},[prefs]);
@@ -104,6 +107,11 @@ export default function NaturalNarratorV2(){
       const nextSignature=next.map(unit=>`${unit.blockIndex}:${unit.text}`).join('\u0001');
       if(nextSignature===signature) return;
       signature=nextSignature;
+      session.current+=1;
+      queue.current?.stop();
+      audio.current?.pause();
+      window.speechSynthesis?.cancel();
+      setStatus('idle');
       setUnits(next);
       setIndex(current=>clamp(current,0,Math.max(0,next.length-1)));
     };
@@ -130,6 +138,8 @@ export default function NaturalNarratorV2(){
 
   const stop=useCallback(()=>{
     session.current+=1;
+    queue.current?.stop();queue.current=null;
+    if(audioUrl.current){URL.revokeObjectURL(audioUrl.current);audioUrl.current=null}
     if(timer.current) window.clearTimeout(timer.current);
     timer.current=null;
     window.speechSynthesis?.cancel();
@@ -140,6 +150,7 @@ export default function NaturalNarratorV2(){
 
   const browser=useCallback((start:number)=>{
     if(!units.length||!window.speechSynthesis) return;
+    stop();
     window.speechSynthesis.cancel();
     if(audio.current) audio.current.pause();
     const token=++session.current;
@@ -155,38 +166,40 @@ export default function NaturalNarratorV2(){
       utterance.rate=clamp(prefs.speed*profile.rate,.55,1.55);
       utterance.pitch=clamp(profile.pitch+(/\?$/.test(unit.text)?.025:/!$/.test(unit.text)?.018:0),.8,1.2);
       utterance.onstart=()=>token===session.current&&setStatus('playing');
-      utterance.onend=()=>{if(token===session.current)timer.current=window.setTimeout(()=>speak(position+1),pauseFor(unit,prefs.delivery))};
+      utterance.onend=()=>{if(token===session.current)speak(position+1)};
       utterance.onerror=()=>token===session.current&&setStatus('idle');
       window.speechSynthesis.speak(utterance);
     };
     speak(clamp(start,0,units.length-1));
-  },[english,prefs.delivery,prefs.speed,prefs.voiceURI,units]);
+  },[english,prefs.delivery,prefs.speed,prefs.voiceURI,units,stop]);
 
   const ai=useCallback(async(start:number,sample?:string)=>{
     const playbackUnits:Unit[]=sample?[{text:sample,blockIndex:-1,paragraphEnd:true}]:units;
     if(!AI_URL||!playbackUnits.length) return;
+    stop();
     window.speechSynthesis?.cancel();
     if(audio.current) audio.current.pause();
     const token=++session.current;
-    const fail=(reason:unknown)=>{if(token!==session.current)return;console.warn(reason);setError('AI voice is unavailable right now. Browser Natural mode still works.');setStatus('idle')};
+    const buffer=new AudioBufferQueue((position,signal)=>requestAudio(`${AI_URL}/tts`,playbackUnits[position].text,prefs.aiSpeaker,readerId(),signal),playbackUnits.length);
+    queue.current=buffer;
+    const player=new Audio();audio.current=player;
+    const fail=(reason:unknown)=>{if(token!==session.current)return;buffer.stop();if(audioUrl.current){URL.revokeObjectURL(audioUrl.current);audioUrl.current=null}setError(audioError(reason));setStatus('idle')};
     const play=async(position:number):Promise<void>=>{
       if(token!==session.current) return;
       if(position>=playbackUnits.length){setStatus('idle');if(!sample)setIndex(0);return}
       const unit=playbackUnits[position];
       if(!sample)setIndex(position);setStatus('loading');
-      const response=await fetch(`${AI_URL}/tts`,{method:'POST',headers:{'Content-Type':'application/json','X-Reader-Id':readerId()},body:JSON.stringify({text:unit.text,speaker:prefs.aiSpeaker})});
-      if(!response.ok) throw new Error(await response.text());
-      const objectUrl=URL.createObjectURL(await response.blob());
+      const objectUrl=URL.createObjectURL(await buffer.take(position));
       if(token!==session.current){URL.revokeObjectURL(objectUrl);return}
-      const player=new Audio(objectUrl);audio.current=player;player.playbackRate=clamp(prefs.speed,.75,1.35);
+      audioUrl.current=objectUrl;player.src=objectUrl;player.playbackRate=clamp(prefs.speed,.75,1.35);
       player.onplay=()=>token===session.current&&setStatus('playing');
-      player.onended=()=>{URL.revokeObjectURL(objectUrl);if(token===session.current)timer.current=window.setTimeout(()=>void play(position+1).catch(fail),pauseFor(unit,prefs.delivery))};
+      player.onended=()=>{URL.revokeObjectURL(objectUrl);audioUrl.current=null;if(token===session.current)void play(position+1).catch(fail)};
       player.onerror=()=>{URL.revokeObjectURL(objectUrl);fail(new Error('AI playback failed'))};
       await player.play();
     };
     setError('');
     await play(clamp(start,0,playbackUnits.length-1)).catch(fail);
-  },[prefs.aiSpeaker,prefs.delivery,prefs.speed,units]);
+  },[prefs.aiSpeaker,prefs.speed,units,stop]);
 
   const start=useCallback((position=index)=>{setError('');if(prefs.mode==='ai'&&AI_URL)void ai(position);else browser(position)},[ai,browser,index,prefs.mode]);
 
@@ -220,7 +233,7 @@ export default function NaturalNarratorV2(){
       <button type="button" className="naturalPlay" onClick={toggle}>{status==='playing'?'Pause':status==='paused'?'Resume':status==='loading'?'Loading…':'Listen naturally'}</button>
       <button type="button" onClick={()=>start(Math.min(units.length-1,index+1))}>›</button>
       <button type="button" onClick={stop}>Stop</button>
-      <span>Paragraph {current?current.blockIndex+1:1} · Sentence {index+1}/{units.length}</span>
+      <span>Paragraph {current?current.blockIndex+1:1} · Passage {index+1}/{units.length}</span>
     </div>
     <div className="naturalNarratorControls">
       <label>Mode<select value={prefs.mode} onChange={event=>setPrefs(value=>({...value,mode:event.target.value as Mode}))}><option value="browser">Browser Natural</option><option value="ai">Aura-2 AI {!AI_URL?'· setup pending':''}</option></select></label>

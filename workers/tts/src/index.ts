@@ -79,7 +79,7 @@ export default {
       return json('Invalid JSON body.', 400, origin);
     }
 
-    const text = typeof body.text === 'string' ? body.text.replace(/\s+/g, ' ').trim() : '';
+    const text = typeof body.text === 'string' ? body.text.trim() : '';
     if (!text) return json('Text is required.', 400, origin);
     if (text.length > MAX_TEXT_LENGTH) return json(`Text must be ${MAX_TEXT_LENGTH} characters or fewer.`, 413, origin);
 
@@ -104,6 +104,8 @@ export default {
       return new Response(result, { status: 200, headers });
     } catch (error) {
       console.error('Workers AI TTS failed', error);
+      const detail = String(error);
+      if (/quota|daily|neurons|limit exceeded|429/i.test(detail)) return json('Cloudflare AI usage limit reached. Try again after the quota resets or use Browser Natural.', 429, origin);
       return json('AI narration failed. Browser voice remains available.', 502, origin);
     }
   },

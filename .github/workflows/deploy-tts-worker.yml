@@ -2,7 +2,7 @@ name: Deploy Phase 8 AI Narrator
 
 on:
   push:
-    branches: ['phase/8-personal-epub-reader']
+    branches: [main]
     paths:
       - 'workers/tts/**'
       - '.github/workflows/deploy-tts-worker.yml'
