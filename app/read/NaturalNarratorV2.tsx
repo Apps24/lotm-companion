@@ -162,17 +162,18 @@ export default function NaturalNarratorV2(){
     speak(clamp(start,0,units.length-1));
   },[english,prefs.delivery,prefs.speed,prefs.voiceURI,units]);
 
-  const ai=useCallback(async(start:number)=>{
-    if(!AI_URL||!units.length) return;
+  const ai=useCallback(async(start:number,sample?:string)=>{
+    const playbackUnits:Unit[]=sample?[{text:sample,blockIndex:-1,paragraphEnd:true}]:units;
+    if(!AI_URL||!playbackUnits.length) return;
     window.speechSynthesis?.cancel();
     if(audio.current) audio.current.pause();
     const token=++session.current;
     const fail=(reason:unknown)=>{if(token!==session.current)return;console.warn(reason);setError('AI voice is unavailable right now. Browser Natural mode still works.');setStatus('idle')};
     const play=async(position:number):Promise<void>=>{
       if(token!==session.current) return;
-      if(position>=units.length){setStatus('idle');setIndex(0);return}
-      const unit=units[position];
-      setIndex(position);setStatus('loading');
+      if(position>=playbackUnits.length){setStatus('idle');if(!sample)setIndex(0);return}
+      const unit=playbackUnits[position];
+      if(!sample)setIndex(position);setStatus('loading');
       const response=await fetch(`${AI_URL}/tts`,{method:'POST',headers:{'Content-Type':'application/json','X-Reader-Id':readerId()},body:JSON.stringify({text:unit.text,speaker:prefs.aiSpeaker})});
       if(!response.ok) throw new Error(await response.text());
       const objectUrl=URL.createObjectURL(await response.blob());
@@ -184,7 +185,7 @@ export default function NaturalNarratorV2(){
       await player.play();
     };
     setError('');
-    await play(clamp(start,0,units.length-1)).catch(fail);
+    await play(clamp(start,0,playbackUnits.length-1)).catch(fail);
   },[prefs.aiSpeaker,prefs.delivery,prefs.speed,units]);
 
   const start=useCallback((position=index)=>{setError('');if(prefs.mode==='ai'&&AI_URL)void ai(position);else browser(position)},[ai,browser,index,prefs.mode]);
@@ -199,8 +200,8 @@ export default function NaturalNarratorV2(){
     stop();setError('');
     const sample='Beyond the gas lamps, the fog settled over the sleeping city. Somewhere in the distance, a clock quietly marked the hour.';
     if(prefs.mode==='ai'){
-      if(!AI_URL){setError('Aura-2 voices are ready in the UI, but the Cloudflare Worker still needs Workers deployment permission.');return}
-      setError('Use Listen naturally to hear the selected Aura-2 voice on the current chapter.');return;
+      if(!AI_URL){setError('AI narration is not configured for this build. Browser Natural mode remains available.');return}
+      void ai(0,sample);return;
     }
     const voice=english.find(v=>v.voiceURI===prefs.voiceURI)??english[0];
     const utterance=new SpeechSynthesisUtterance(sample);

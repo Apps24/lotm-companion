@@ -25,6 +25,8 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Build static site
+        env:
+          NEXT_PUBLIC_TTS_WORKER_URL: https://lotm-companion-tts.apurvpatole2.workers.dev
         run: npm run build
 
       - name: Verify export
